@@ -1,0 +1,13 @@
+<resources>
+  <string name="app_name">ImageSelector</string>
+  <string name="image_pick_cancel">取消</string>
+  <string name="image_pick_preview">预览</string>
+  <string name="image_pick_complete">完成</string>
+  <string name="image_pick_msg_no_camera">摄像头调用失败</string>
+  <string name="image_pick_msg_no_crop">系统中没有剪裁应用可用</string>
+  <string name="image_pick_msg_no_sdcard">无内存可用</string>
+  <string name="image_pick_msg_amount_limit">最多只能选择%d张照片</string>
+  <string name="image_pick_save">保存</string>
+  <string name="image_pick_picture_saved_to_storage">图片已被存至%s</string>
+  <string name="image_pick_request_permission_desc">在设置-应用-%s-权限中开启相机权限,以正常使用功能</string>
+</resources>

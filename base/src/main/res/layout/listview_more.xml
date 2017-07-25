@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+
+  <RelativeLayout
+      android:id="@+id/root"
+      android:layout_width="fill_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:minHeight="@dimen/list_item_height"
+      android:padding="@dimen/space_normal"
+      >
+
+    <RelativeLayout
+        android:id="@+id/more"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        >
+
+      <TextView
+          android:id="@+id/more_info"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:gravity="center"
+          android:singleLine="true"
+          android:text="@string/more"
+          />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+      <ProgressBar
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          style="?android:attr/progressBarStyleSmall"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:paddingLeft="10.0dip"
+          android:paddingRight="10.0dip"
+          android:singleLine="true"
+          android:text="@string/loading"
+          android:textSize="13.0sp"
+          />
+    </LinearLayout>
+  </RelativeLayout>
+</LinearLayout>

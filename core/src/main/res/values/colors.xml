@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="main_color_normal">#e65454</color>
+  <color name="main_color_pressed">#d44a4a</color>
+  <!--字体颜色-->
+  <color name="linked">#576b95</color>
+  <color name="textColor">#333</color>
+  <color name="textColorSelected">#e85352</color>
+  <color name="textColorPressed">#99e65454</color>
+  <color name="textColorHint">#999</color>
+  <color name="textColorPrimary">#666</color>
+  <color name="textColorPrimaryLight">#999</color>
+
+  <color name="transparent">@android:color/transparent</color>
+  <color name="white">#ffffffff</color>
+  <color name="black">#ff000000</color>
+
+  <!--分割线-->
+  <!--白色背景分割线-->
+  <color name="dividerX1">#e5e5e5</color>
+  <!--H1背景色分割线-->
+  <color name="dividerX2">#d6d6d6</color>
+  <!--特殊情况需加深分割线-->
+  <color name="dividerX3">#ccc</color>
+  <!--背景色-->
+  <!--大背景色-->
+  <color name="bgH1">#f0f0f0</color>
+  <!--小背景色-->
+  <color name="bgH2">#fafafa</color>
+  <!--特殊深色背景-->
+  <color name="bgH3">#222c39</color>
+  <!--不可点击背景色-->
+  <color name="bgH4">#d6d6d6</color>
+</resources>

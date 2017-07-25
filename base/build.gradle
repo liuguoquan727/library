@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+// 所有snapshot版本的库更新本地缓存的时间间隔
+configurations.all {
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+  testCompile "junit:junit:${JUNIT_VERSION}"
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile "com.squareup:otto:${OTTO_VERSION}"
+  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
+  compile "com.nineoldandroids:library:${NINEOLDANDROIDS_VERSION}"
+  compile "io.paperdb:paperdb:${PAPERDB_VERSION}"
+  compile project(':library')
+}

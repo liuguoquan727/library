@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':BaseRecyclerAdapter', ':core', ':base', ':dialogplus', ':library', ':utils',
+    ':ImagePick'

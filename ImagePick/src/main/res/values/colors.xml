@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="image_pick_main_color_normal">#e65454</color>
+  <color name="image_pick_main_color_pressed">#d44a4a</color>
+  <color name="image_pick_textColorPrimaryLight">#999</color>
+  <color name="image_pick_textColorPressed">#99e65454</color>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/welcome_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:shadowColor="@color/grey_850"
+      android:shadowDx="0"
+      android:shadowDy="-1"
+      android:shadowRadius="5"
+      android:text="@string/welcome"
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      android:textColor="#ff7F5E33"
+      />
+
+</LinearLayout>

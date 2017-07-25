@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- activity进出动画时间 -->
+  <integer name="anim_activity_in_out_duration">@android:integer/config_shortAnimTime</integer>
+
+  <style name="Animation.Toast">
+    <item name="android:windowEnterAnimation">@anim/toast_enter</item>
+    <item name="android:windowExitAnimation">@anim/toast_exit</item>
+  </style>
+
+  <style name="Toolbar.titleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="android:textColor">#333</item>
+    <item name="android:textSize">18sp</item>
+  </style>
+
+  <style name="Toolbar.Button.Navigation" parent="Base.Toolbar.Button.Navigation"/>
+
+  <style name="Base.Toolbar.Button.Navigation" parent="android:Widget">
+    <item name="android:background">@drawable/lib_bg_control</item>
+    <item name="android:minWidth">56dp</item>
+    <item name="android:scaleType">center</item>
+  </style>
+</resources>

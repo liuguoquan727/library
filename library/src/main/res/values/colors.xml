@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="transparent">@android:color/transparent</color>
+  <color name="white">#ffffffff</color>
+  <color name="black">#ff000000</color>
+  <color name="grey_900">#ff212121</color>
+  <color name="grey_850">#ff303030</color>
+  <color name="grey_800">#ff424242</color>
+  <color name="grey_600">#ff757575</color>
+  <color name="grey_300">#ffe0e0e0</color>
+  <color name="grey_100">#fff5f5f5</color>
+  <color name="grey_50">#fffafafa</color>
+
+  <color name="danger">#d9534f</color>
+  <color name="warning">#f0ad4e</color>
+  <color name="info">#5bc0de</color>
+  <color name="success">#5cb85c</color>
+
+  <color name="window_background">@color/grey_100</color>
+  <color name="main_color_normal">#ffcc0022</color>
+  <color name="main_color_pressed">#ff990022</color>
+
+  <color name="header_title">@color/white</color>
+
+  <color name="content_title">@color/grey_850</color>
+  <color name="content_time_now">#ffEA830A</color>
+  <color name="content_time">#ff7e7e7e</color>
+  <color name="content_from">#ff7e7e7e</color>
+  <color name="content">@color/grey_850</color>
+  <color name="content_footer">#ff7e7e7e</color>
+
+  <!-- 积极的 -->
+  <color name="positive_normal">#ffcc0022</color>
+  <color name="positive_pressed">#ff990022</color>
+  <color name="positive_disable">@color/grey_850</color>
+  <!-- 消极的 -->
+  <color name="negative_normal">@color/grey_100</color>
+  <color name="negative_pressed">@color/grey_600</color>
+  <color name="negative_disable">@color/grey_850</color>
+  <!-- 中性的 -->
+  <color name="neutral_normal">@color/grey_100</color>
+  <color name="neutral_pressed">@color/grey_100</color>
+
+</resources>

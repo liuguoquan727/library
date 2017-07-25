@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="AppTheme" parent="Theme.base">
+    <item name="android:selectableItemBackground">@drawable/lib_bg_item_material</item>
+    <item name="android:selectableItemBackgroundBorderless">
+      @drawable/lib_bg_item_borderless_material
+    </item>
+    <item name="android:windowAnimationStyle">@style/ActivityLoadAnimation</item>
+  </style>
+
+  <style name="ActivityLoadAnimation" parent="@android:style/Animation.Activity">
+    <item name="android:activityOpenEnterAnimation">@anim/slide_in_right_activity</item>
+    <item name="android:activityOpenExitAnimation">@anim/slide_out_left_activity</item>
+    <item name="android:activityCloseEnterAnimation">@anim/slide_in_left_activity</item>
+    <item name="android:activityCloseExitAnimation">@anim/slide_out_right_activity</item>
+  </style>
+
+  <style name="Widget"/>
+
+  <style name="Widget.Material" parent="Widget"/>
+
+  <style name="Base.Toolbar.Button.Navigation" parent="Widget.Material">
+    <item name="android:background">@drawable/lib_bg_control_40dp_material</item>
+    <item name="android:minWidth">56dp</item>
+    <item name="android:scaleType">center</item>
+  </style>
+</resources>

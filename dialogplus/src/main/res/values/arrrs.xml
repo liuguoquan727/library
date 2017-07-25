@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="DialogPlus">
+    <!-- Style of the dialog. -->
+    <attr format="reference" name="dialogPlusStyle"/>
+  </declare-styleable>
+
+</resources>

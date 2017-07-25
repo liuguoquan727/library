@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/preview_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <View
+      android:id="@+id/status_bar_background"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="?attr/statusBarColor"
+      />
+
+  <RelativeLayout
+      android:id="@+id/tool_bar_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/toolBarSize"
+        style="?attr/toolbarStyle"
+        />
+
+    <View
+        android:id="@+id/tool_bar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_small"
+        android:layout_below="@id/tool_bar"
+        android:background="@drawable/below_shadow"
+        />
+
+    <com.mdroid.view.SwipeProgressBarView
+        android:id="@+id/tool_bar_progress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_small"
+        android:layout_below="@id/tool_bar"
+        />
+
+  </RelativeLayout>
+
+</LinearLayout>

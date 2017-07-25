@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- for progress fragment -->
+  <string name="network_error_tips">网络异常</string>
+  <string name="network_error_des1">建议检查网络后</string>
+  <string name="network_error_des2">点击屏幕尝试重新连接</string>
+  <string name="reload_data_tips">点击屏幕获取数据</string>
+
+  <string name="no_data">暂无数据</string>
+  <string name="no_sdcard_tips">请挂载 SD Card 后重试</string>
+  <string name="loading">加载中</string>
+  <string name="loading_with_dot">加载中…</string>
+  <string name="more">更多</string>
+  <string name="no_more_data">下面没有了…</string>
+
+  <string name="ok">确定</string>
+  <string name="cancel">取消</string>
+  <string name="submit">提交</string>
+  <string name="moment">刚刚</string>
+  <string name="unknown">未知</string>
+  <string name="welcome">Welcome</string>
+</resources>

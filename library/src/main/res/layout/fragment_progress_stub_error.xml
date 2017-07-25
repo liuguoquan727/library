@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/network_error_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/conn_no_network"
+      />
+
+  <TextView
+      android:id="@+id/network_error_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:paddingTop="4dip"
+      android:singleLine="true"
+      android:text="@string/network_error_tips"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:textColor="#ff2F4F4F"
+      />
+
+  <TextView
+      android:id="@+id/network_error_des1_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingTop="4dip"
+      android:singleLine="true"
+      android:text="@string/network_error_des1"
+      android:textAppearance="?android:attr/textAppearanceSmall"
+      android:textColor="#ff808080"
+      />
+
+  <TextView
+      android:id="@+id/network_error_des2_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:singleLine="true"
+      android:text="@string/network_error_des2"
+      android:textAppearance="?android:attr/textAppearanceSmall"
+      android:textColor="#ff808080"
+      />
+
+</LinearLayout>

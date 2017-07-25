@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Widget"/>
+
+  <style name="Widget.Material" parent="Widget"/>
+
+  <style name="Base.Toolbar.Button.Navigation" parent="Widget.Material">
+    <item name="android:background">@drawable/bg_control_40dp_material</item>
+    <item name="android:minWidth">56dp</item>
+    <item name="android:scaleType">center</item>
+  </style>
+</resources>

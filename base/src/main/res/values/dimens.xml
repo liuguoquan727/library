@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="header_button_width">72dp</dimen>
+  <dimen name="header_height">@dimen/abc_action_bar_default_height_material</dimen>
+  <dimen name="list_item_height_small">48dp</dimen>
+  <dimen name="list_item_height">64dp</dimen>
+  <dimen name="list_item_height_large">80dp</dimen>
+</resources>

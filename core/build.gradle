@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.github.dcendents.android-maven'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+
+    consumerProguardFiles 'proguard.pro'
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile "com.android.support:appcompat-v7:${APPCOMPAT_V7_VERSION}"
+  testCompile 'junit:junit:4.12'
+
+  compile "com.android.support:multidex:${MULTIDEX_VERSION}"
+  compile "com.google.code.gson:gson:${GSON_VERSION}"
+
+  compile project(':BaseRecyclerAdapter')
+  compile project(':base')
+  compile project(':dialogplus')
+  compile project(':ImagePick')
+
+  // butterknife系列
+  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
+  annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
+  // okhttp系列
+  compile "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
+  compile "com.squareup.okhttp3:logging-interceptor:${OK_HTTP_VERSION}"
+
+  // rxJava系列
+  compile "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION}"
+  compile "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION}"
+  compile "com.jakewharton.rxbinding2:rxbinding:${RXBINDING_VERSION}"
+  compile "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${RXBINDING_SUPPORT_VERSION}"
+  compile "com.jakewharton.rxbinding2:rxbinding-support-v4:${RXBINDING_SUPPORT_VERSION}"
+
+  // If you want to bind to Android-specific lifecycles
+  compile "com.trello.rxlifecycle2:rxlifecycle-android:${RXLIFECYCLE_VERSION}"
+  // If you want to use Navi for providers
+  compile "com.trello.rxlifecycle2:rxlifecycle-navi:${RXLIFECYCLE_VERSION}"
+
+  // 友盟数据统计
+  compile "com.umeng.analytics:analytics:${ANALYTICS_VERSION}"
+  // glide系列
+  compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+  compile "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
+}
+
+task sourcesJar(type: Jar) {
+  from android.sourceSets.main.java.srcDirs
+  classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+  failOnError false
+  source = android.sourceSets.main.java.sourceFiles
+  classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+  classpath += configurations.compile
+}
+// build a jar with javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+  classifier = 'javadoc'
+  from javadoc.destinationDir
+}
+
+artifacts {
+  archives sourcesJar
+  archives javadocJar
+}

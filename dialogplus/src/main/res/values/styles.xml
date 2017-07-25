@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="nothing">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:backgroundDimEnabled">true</item>
+  </style>
+
+  <style name="Animation"/>
+
+  <style name="Animation.Top">
+    <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+    <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+  </style>
+
+  <style name="Animation.Center">
+    <item name="android:windowEnterAnimation">@anim/fade_in_center</item>
+    <item name="android:windowExitAnimation">@anim/fade_out_center</item>
+  </style>
+
+  <style name="Animation.Bottom">
+    <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+    <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+  </style>
+
+  <style name="Animation.Left">
+    <item name="android:windowEnterAnimation">@anim/slide_in_left</item>
+    <item name="android:windowExitAnimation">@anim/slide_out_left</item>
+  </style>
+
+  <style name="Animation.Right">
+    <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+    <item name="android:windowExitAnimation">@anim/slide_out_right</item>
+  </style>
+</resources>

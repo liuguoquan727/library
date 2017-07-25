@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_tool_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+  <!-- 预留给需要留出状态栏高度时使用 -->
+  <View
+      android:id="@+id/status_bar_background"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="?attr/statusBarColor"
+      />
+  <RelativeLayout
+      android:id="@+id/tool_bar_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/toolBarSize"
+        style="?attr/toolbarStyle"
+        />
+    <View
+        android:id="@+id/tool_bar_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/tool_bar"
+        android:background="@drawable/image_pick_shadow_tool_bar"
+        />
+  </RelativeLayout>
+</LinearLayout>
