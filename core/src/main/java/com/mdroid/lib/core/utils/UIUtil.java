@@ -30,7 +30,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * Created by ouyangzn on 2016/10/8.<br/>
  * Description：UI操作相关工具类
  * <p>e.g. 给toolbar添加图片、文字等操作</p>
  * <p>e.g. 改变状态栏颜色</p>···
