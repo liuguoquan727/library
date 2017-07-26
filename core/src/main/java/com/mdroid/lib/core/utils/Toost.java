@@ -6,7 +6,7 @@ import android.support.annotation.StringRes;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.widget.Toast;
-import com.chargerlink.lib.core.R;
+import com.mdroid.lib.core.R;
 import com.mdroid.utils.AndroidUtils;
 
 public class Toost {

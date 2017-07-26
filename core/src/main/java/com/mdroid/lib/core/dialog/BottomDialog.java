@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.view.Gravity;
 import android.view.View;
-import com.chargerlink.lib.core.R;
+import com.mdroid.lib.core.R;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.DialogPlusBuilder;
 import com.orhanobut.dialogplus.Holder;

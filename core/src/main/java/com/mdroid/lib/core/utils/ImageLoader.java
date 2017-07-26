@@ -10,7 +10,6 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 /**
- * Created by ouyangzn on 2016/11/9.<br/>
  * Description：app统一的加载图片的工具类，方便必要时切换图片加载库
  */
 public class ImageLoader {

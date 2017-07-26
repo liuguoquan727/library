@@ -16,7 +16,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import com.chargerlink.lib.core.R;
+import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
 import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.lib.core.utils.SystemBarConfig;
@@ -404,12 +404,6 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
   protected void processMessage(Message message) {
   }
 
-  /**
-   * fragment的数据等加载状态
-   */
-  public enum Status {
-    STATUS_NORMAL, STATUS_LOADING, STATUS_ERROR, STATUS_EMPTY
-  }
 
   private static class Handler extends PausedHandler {
     private WeakReference<BaseFragment> mFragment;

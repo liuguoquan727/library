@@ -12,7 +12,6 @@ import com.mdroid.utils.Ln;
 import com.orhanobut.dialogplus.DialogPlus;
 
 /**
- * Created by ouyangzn on 2016/8/1.<br/>
  * Description：
  */
 public class BaseChromeClient extends WebChromeClient {

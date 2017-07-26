@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.chargerlink.lib.core">
+    package="com.mdroid.lib.core">
 
   <application
       android:allowBackup="false"
@@ -9,7 +9,7 @@
       tools:replace="android:allowBackup"
       >
     <activity
-        android:name="com.mdroid.lib.core.base.BaseActivity"
+        android:name="com.mdroid.lib.core.base.CommonActivity"
         android:configChanges="keyboard|keyboardHidden|locale|mcc|mnc|orientation|screenSize|screenLayout"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="adjustPan|stateHidden"

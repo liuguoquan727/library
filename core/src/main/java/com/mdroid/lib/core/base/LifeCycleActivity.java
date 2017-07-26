@@ -2,16 +2,15 @@ package com.mdroid.lib.core.base;
 
 import android.os.Bundle;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import com.mdroid.PausedHandler;
 import com.mdroid.lifecycle.LifecycleDispatcher;
+import com.trello.navi2.component.support.NaviAppCompatActivity;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by ouyangzn on 2016/11/10.<br/>
  * Description：用于自己管理activity的生命周期的activity基类
  */
-public class LifeCycleActivity extends AppCompatActivity {
+public class LifeCycleActivity extends NaviAppCompatActivity {
 
   private PausedHandler mHandler;
 

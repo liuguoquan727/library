@@ -19,7 +19,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.chargerlink.lib.core.R;
+import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.base.BaseBrowseFragment;
 import com.mdroid.lib.core.base.BaseExtraKeys;
 import com.mdroid.lib.core.base.BaseFragment;

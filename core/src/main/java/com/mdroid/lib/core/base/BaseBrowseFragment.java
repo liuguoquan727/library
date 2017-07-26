@@ -6,11 +6,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.chargerlink.lib.core.R;
+import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.utils.UIUtil;
 
 /**
- * Created by ouyangzn on 2016/8/1.<br/>
  * Description：web页面的基类
  */
 public class BaseBrowseFragment extends BaseFragment {

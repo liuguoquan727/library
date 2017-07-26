@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mdroid.view.SwipeOverlayFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/content"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    />
+    android:orientation="vertical"
+    >
+  <android.support.v7.widget.Toolbar
+      android:id="@+id/tool_bar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/toolBarSize"
+      android:background="@color/holo_red_dark"
+      style="?attr/toolbarStyle"
+      />
+  <FrameLayout
+      android:id="@+id/layout_container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      >
+    <ViewStub
+        android:id="@+id/stub_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/lib_content_loading"
+        />
+    <ViewStub
+        android:id="@+id/stub_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/lib_content_error"
+        />
+    <ViewStub
+        android:id="@+id/stub_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/lib_content_empty"
+        />
+  </FrameLayout>
+</FrameLayout>

@@ -3,12 +3,12 @@ package com.mdroid.lib.core.base;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import com.chargerlink.lib.core.R;
+import com.mdroid.lib.core.R;
 
 /**
  * 全屏 Activity
  */
-public class FullScreenActivity extends BaseActivity {
+public class FullScreenActivity extends CommonActivity {
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

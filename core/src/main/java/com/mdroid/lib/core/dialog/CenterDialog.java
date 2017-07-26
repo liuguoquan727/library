@@ -7,8 +7,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.chargerlink.lib.core.R;
 import com.jakewharton.rxbinding2.view.RxView;
+import com.mdroid.lib.core.R;
 import com.mdroid.utils.AndroidUtils;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.DialogPlusBuilder;
@@ -17,7 +17,6 @@ import com.orhanobut.dialogplus.OnShowListener;
 import com.orhanobut.dialogplus.ViewHolder;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
