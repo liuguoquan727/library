@@ -26,25 +26,22 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
   private Unbinder mUnbinder;
 
   public abstract Status getCurrentStatus();
-
   public abstract String getPageTitle();
-
   public abstract int getLayoutResId();
+  public abstract T initPresenter();
 
   public abstract void initView(Bundle savedInstanceState);
-
-  public abstract T initPresenter();
 
   @Override @CallSuper protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(getLayoutResId());
     mUnbinder = ButterKnife.bind(this);
     EventBus.bus().register(this);
-    initView(savedInstanceState);
     mPresenter = initPresenter();
     if (mPresenter != null) {
       mPresenter.onAttach((V) this);
     }
+    initView(savedInstanceState);
   }
 
   @Override @CallSuper public void onBackPressed() {
