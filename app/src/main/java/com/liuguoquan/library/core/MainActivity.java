@@ -36,8 +36,9 @@ public class MainActivity extends BaseActivity {
   }
 
   @Override public void initView(Bundle savedInstanceState) {
-    mStateLayout.switchStatus(getCurrentStatus());
     StatusBarUtil.setColor(this, getResources().getColor(R.color.main_color_normal), 0);
+    mStateLayout.switchStatus(getCurrentStatus());
+    mToolBar.setBackgroundResource(R.color.main_color_normal);
     mText.setText("Just do it");
   }
 

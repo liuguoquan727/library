@@ -3,20 +3,25 @@ package com.liuguoquan.library.core;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import butterknife.BindView;
 import butterknife.OnClick;
 import com.mdroid.app.TranslucentStatusCompat;
 import com.mdroid.lib.core.base.BaseFragment;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.ActivityUtil;
+import com.mdroid.lib.core.utils.UIUtil;
 
 /**
  * Created by liuguoquan on 2017/7/26.
  */
 
 public class LeeFragment extends BaseFragment {
+
+  @BindView(R.id.tool_bar) Toolbar mToolbar;
 
   @Override protected Status getCurrentStatus() {
     return null;
@@ -40,7 +45,10 @@ public class LeeFragment extends BaseFragment {
   }
 
   @Override protected void initView(View parent) {
+    TranslucentStatusCompat.requestTranslucentStatus(getActivity());
+    mToolbar.setVisibility(View.GONE);
     getStatusBar().setBackgroundResource(R.color.main_color_normal);
+    getToolBarShadow().setVisibility(View.GONE);
     getToolBar().setBackgroundResource(R.color.main_color_normal);
   }
 

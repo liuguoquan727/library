@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     >
 
   <android.support.v7.widget.Toolbar
@@ -12,8 +13,10 @@
       android:layout_height="?attr/toolBarSize"
       android:background="@color/main_color_normal"
       style="?attr/toolbarStyle"
+      android:visibility="visible"
       />
   <Button
+      android:layout_marginTop="10dp"
       android:id="@+id/normal"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
