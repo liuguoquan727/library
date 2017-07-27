@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import butterknife.OnClick;
+import com.mdroid.app.TranslucentStatusCompat;
 import com.mdroid.lib.core.base.BaseFragment;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.ActivityUtil;
-import com.mdroid.lib.imagepick.utils.TranslucentStatusCompat;
 
 /**
  * Created by liuguoquan on 2017/7/26.
@@ -40,7 +40,6 @@ public class LeeFragment extends BaseFragment {
   }
 
   @Override protected void initView(View parent) {
-    TranslucentStatusCompat.requestTranslucentStatus(getActivity());
     getStatusBar().setBackgroundResource(R.color.main_color_normal);
     getToolBar().setBackgroundResource(R.color.main_color_normal);
   }

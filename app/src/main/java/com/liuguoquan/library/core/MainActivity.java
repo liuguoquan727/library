@@ -11,6 +11,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.jaeger.library.StatusBarUtil;
 import com.mdroid.lib.core.base.BaseActivity;
+import com.mdroid.lib.core.base.BaseExtraKeys;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.ActivityUtil;
@@ -55,6 +56,12 @@ public class MainActivity extends BaseActivity {
         break;
       case R.id.loading:
         //mStateLayout.switchStatus(Status.STATUS_LOADING);
+        Intent intent = new Intent(this, WebActivity.class);
+        bundle = new Bundle();
+        bundle.putString(BaseExtraKeys.KEY_URL, "https://www.baidu.com/");
+        bundle.putString(BaseExtraKeys.KEY_TITLE, "百度");
+        intent.putExtras(bundle);
+        ActivityUtil.startActivity(this, intent);
         break;
       case R.id.empty:
         //mStateLayout.switchStatus(Status.STATUS_EMPTY);
