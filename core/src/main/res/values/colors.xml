@@ -2,6 +2,8 @@
 <resources>
   <color name="main_color_normal">#e65454</color>
   <color name="main_color_pressed">#d44a4a</color>
+  <color name="colorPrimary">@color/main_color_normal</color>
+  <color name="colorPrimaryDark">@color/main_color_pressed</color>
   <!--字体颜色-->
   <color name="linked">#576b95</color>
   <color name="textColor">#333</color>
