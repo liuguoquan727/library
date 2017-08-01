@@ -16,7 +16,7 @@ import com.mdroid.lib.core.base.BaseWebView;
 
 public class WebActivity extends BaseBrowseActivity {
 
-  @Override public void initView(Bundle savedInstanceState) {
+  @Override public void initData(Bundle savedInstanceState) {
     StatusBarUtil.setColor(this, getResources().getColor(R.color.main_color_normal), 0);
     Bundle bundle = getIntent().getExtras();
     if (bundle != null) {

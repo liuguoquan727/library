@@ -31,11 +31,11 @@ public class MainActivity extends BaseActivity {
     return null;
   }
 
-  @Override public int getLayoutResId() {
+  @Override protected int getContentView() {
     return R.layout.activity_main;
   }
 
-  @Override public void initView(Bundle savedInstanceState) {
+  @Override public void initData(Bundle savedInstanceState) {
     StatusBarUtil.setColor(this, getResources().getColor(R.color.main_color_normal), 0);
     mStateLayout.switchStatus(getCurrentStatus());
     mToolBar.setBackgroundResource(R.color.main_color_normal);

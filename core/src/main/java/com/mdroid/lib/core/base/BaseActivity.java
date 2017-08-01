@@ -27,21 +27,25 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
 
   public abstract Status getCurrentStatus();
   public abstract String getPageTitle();
-  public abstract int getLayoutResId();
   public abstract T initPresenter();
 
-  public abstract void initView(Bundle savedInstanceState);
+  protected abstract int getContentView();
+
+  /**
+   * onCreate方法中调用
+   */
+  protected abstract void initData(Bundle savedInstanceState);
 
   @Override @CallSuper protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(getLayoutResId());
+    setContentView(getContentView());
     mUnbinder = ButterKnife.bind(this);
     EventBus.bus().register(this);
     mPresenter = initPresenter();
     if (mPresenter != null) {
       mPresenter.onAttach((V) this);
     }
-    initView(savedInstanceState);
+    initData(savedInstanceState);
   }
 
   @Override @CallSuper public void onBackPressed() {

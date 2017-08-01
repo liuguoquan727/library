@@ -29,7 +29,7 @@ public class BaseBrowseActivity extends BaseActivity {
     return mTitle;
   }
 
-  @Override public int getLayoutResId() {
+  @Override public int getContentView() {
     return R.layout.lib_activity_content_base_browse;
   }
 
@@ -37,7 +37,7 @@ public class BaseBrowseActivity extends BaseActivity {
     return null;
   }
 
-  @Override public void initView(Bundle savedInstanceState) {
+  @Override public void initData(Bundle savedInstanceState) {
     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
         | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     Bundle bundle = getIntent().getExtras();
