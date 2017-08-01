@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
     >
 
   <android.support.v7.widget.Toolbar
@@ -15,33 +14,45 @@
       style="?attr/toolbarStyle"
       android:visibility="visible"
       />
-  <Button
+  <TextView
       android:layout_marginTop="10dp"
       android:id="@+id/normal"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="40dp"
+      android:gravity="center"
+      android:background="?selectableItemBackground"
       android:text="normal"
       />
-  <Button
+  <TextView
       android:id="@+id/loading"
+      android:layout_marginTop="10dp"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="40dp"
+      android:gravity="center"
+      android:background="?selectableItemBackground"
       android:text="loading"
       />
-  <Button
+  <TextView
       android:id="@+id/empty"
+      android:layout_marginTop="10dp"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="40dp"
+      android:gravity="center"
+      android:background="?selectableItemBackground"
       android:text="empty"
       />
-  <Button
+  <TextView
       android:id="@+id/error"
+      android:layout_marginTop="10dp"
+      android:background="?selectableItemBackground"
+      android:gravity="center"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="40dp"
       android:text="error"
       />
   <com.mdroid.lib.core.view.StateFrameLayout
       android:id="@+id/state_layout"
+      android:layout_marginTop="20dp"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       >
