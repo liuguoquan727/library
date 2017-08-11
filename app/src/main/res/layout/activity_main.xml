@@ -9,7 +9,7 @@
   <android.support.v7.widget.Toolbar
       android:id="@+id/tool_bar"
       android:layout_width="match_parent"
-      android:layout_height="?attr/toolBarSize"
+      android:layout_height="45dp"
       android:background="@color/main_color_normal"
       style="?attr/toolbarStyle"
       android:visibility="visible"
@@ -20,7 +20,6 @@
       android:layout_width="match_parent"
       android:layout_height="40dp"
       android:gravity="center"
-      android:background="?selectableItemBackground"
       android:text="normal"
       />
   <TextView
@@ -29,7 +28,6 @@
       android:layout_width="match_parent"
       android:layout_height="40dp"
       android:gravity="center"
-      android:background="?selectableItemBackground"
       android:text="loading"
       />
   <TextView
@@ -38,13 +36,11 @@
       android:layout_width="match_parent"
       android:layout_height="40dp"
       android:gravity="center"
-      android:background="?selectableItemBackground"
       android:text="empty"
       />
   <TextView
       android:id="@+id/error"
       android:layout_marginTop="10dp"
-      android:background="?selectableItemBackground"
       android:gravity="center"
       android:layout_width="match_parent"
       android:layout_height="40dp"
@@ -64,7 +60,6 @@
           android:id="@+id/text"
           android:layout_width="match_parent"
           android:layout_height="40dp"
-          android:background="?selectableItemBackground"
           android:gravity="center"
           android:text="Hello World!"
           />
