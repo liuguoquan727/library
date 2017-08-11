@@ -5,7 +5,6 @@ import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.mdroid.lib.core.R;
@@ -17,11 +16,11 @@ import com.mdroid.lib.core.base.Status;
 
 public class StateFrameLayout extends FrameLayout {
 
-  private View mLoadingView;
-  private View mErrorView;
-  private View mEmptyView;
-  private View mContentView;
-  private Status mStatus;
+  protected View mLoadingView;
+  protected View mErrorView;
+  protected View mEmptyView;
+  protected View mContentView;
+  protected Status mStatus;
 
   public StateFrameLayout(@NonNull Context context) {
     this(context, null);
@@ -98,7 +97,7 @@ public class StateFrameLayout extends FrameLayout {
     }
   }
 
-  private void hideAllView() {
+  public void hideAllView() {
     int childCount = getChildCount();
     for (int i = 0; i < childCount; i++) {
       getChildAt(i).setVisibility(View.GONE);

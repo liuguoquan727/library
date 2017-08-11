@@ -25,9 +25,11 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
   public T mPresenter;
   private Unbinder mUnbinder;
 
-  public abstract Status getCurrentStatus();
-  public abstract String getPageTitle();
-  public abstract T initPresenter();
+  protected abstract Status getCurrentStatus();
+
+  protected abstract String getPageTitle();
+
+  protected abstract T initPresenter();
 
   protected abstract int getContentView();
 

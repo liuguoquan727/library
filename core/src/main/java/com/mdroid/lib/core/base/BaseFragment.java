@@ -198,7 +198,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
    *
    * @return 是否消费返回键事件
    */
-  public boolean onBackPressed() {
+  protected boolean onBackPressed() {
     return false;
   }
 
@@ -212,7 +212,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
 
   protected abstract int getContentView();
 
-  public abstract T initPresenter();
+  protected abstract T initPresenter();
 
   protected abstract String getPageTitle();
 

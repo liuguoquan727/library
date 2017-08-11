@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <style name="AppTheme" parent="Theme.base">
+  <style name="AppThemeBase" parent="Theme.base">
     <item name="android:selectableItemBackground">@drawable/lib_bg_item_material</item>
     <item name="android:selectableItemBackgroundBorderless">
       @drawable/lib_bg_item_borderless_material
