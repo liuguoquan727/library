@@ -26,7 +26,7 @@
     <item name="dialogPlusStyle">@style/dialogPlusStyle</item>
   </style>
 
-  <style name="AppThemeBase" parent="Theme.base">
+  <style name="AppTheme" parent="Theme.base">
     <item name="android:selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
     <item name="selectableItemBackgroundBorderless">@drawable/abc_item_background_holo_dark</item>
     <item name="android:windowAnimationStyle">@style/ActivityLoadAnimation</item>
@@ -39,7 +39,7 @@
     <item name="android:activityCloseExitAnimation">@anim/slide_out_right_activity</item>
   </style>
 
-  <style name="Theme.Dialog" parent="AppThemeBase">
+  <style name="Theme.Dialog" parent="AppTheme">
     <item name="android:windowBackground">@android:color/transparent</item>
     <item name="android:windowFrame">@null</item>
     <item name="android:windowNoTitle">true</item>
@@ -62,7 +62,7 @@
     <item name="android:background">@color/white</item>
   </style>
 
-  <style name="dialogPlusStyle" parent="AppThemeBase">
+  <style name="dialogPlusStyle" parent="AppTheme">
     <!--背景透明-->
     <item name="android:windowBackground">@android:color/transparent</item>
     <item name="android:backgroundDimEnabled">true</item>

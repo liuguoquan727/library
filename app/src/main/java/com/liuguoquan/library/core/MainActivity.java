@@ -15,13 +15,13 @@ import com.mdroid.lib.core.base.BaseExtraKeys;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.ActivityUtil;
-import com.mdroid.lib.core.view.StateFrameLayout;
+import com.mdroid.lib.core.view.StateViewLayout;
 
 public class MainActivity extends BaseActivity {
 
   @BindView(R.id.text) TextView mText;
   @BindView(R.id.tool_bar) Toolbar mToolBar;
-  @BindView(R.id.state_layout) StateFrameLayout mStateLayout;
+  @BindView(R.id.state_layout) StateViewLayout mStateLayout;
 
   @Override public Status getCurrentStatus() {
     return Status.STATUS_NORMAL;

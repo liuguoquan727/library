@@ -14,7 +14,7 @@ import com.mdroid.lib.core.base.Status;
  * Created by liuguoquan on 2017/7/26.
  */
 
-public class StateFrameLayout extends FrameLayout {
+public class StateViewLayout extends FrameLayout {
 
   protected View mLoadingView;
   protected View mErrorView;
@@ -22,15 +22,15 @@ public class StateFrameLayout extends FrameLayout {
   protected View mContentView;
   protected Status mStatus;
 
-  public StateFrameLayout(@NonNull Context context) {
+  public StateViewLayout(@NonNull Context context) {
     this(context, null);
   }
 
-  public StateFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+  public StateViewLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
     this(context, attrs, 0);
   }
 
-  public StateFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs,
+  public StateViewLayout(@NonNull Context context, @Nullable AttributeSet attrs,
       @AttrRes int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     initView(context);
