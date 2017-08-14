@@ -24,6 +24,11 @@
     <item name="itemSizeLarge">50dp</item>
     <item name="itemSizeXLarge">60dp</item>
     <item name="dialogPlusStyle">@style/dialogPlusStyle</item>
+    <item name="md_title_color">@color/md_title_color</item>
+    <item name="md_content_color">@color/md_content_color</item>
+    <item name="md_positive_color">@color/md_positive_color</item>
+    <item name="md_negative_color">@color/md_negative_color</item>
+    <item name="md_divider_color">@color/md_divider_color</item>
   </style>
 
   <style name="AppTheme" parent="Theme.base">
