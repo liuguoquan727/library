@@ -104,10 +104,11 @@ public void *(***);
     @retrofit2.http.* <methods>;
 }
 
-# butterknife
--keep class butterknife.** { *; }
--dontwarn butterknife.internal.**
--keep class **$$ViewBinder { *; }
+# ButterKnife 8
+-keep public class * implements butterknife.Unbinder { public <init>(**, android.view.View); }
+-keep class butterknife.*
+-keepclasseswithmembernames class * { @butterknife.* <methods>; }
+-keepclasseswithmembernames class * { @butterknife.* <fields>; }
 
 -keepclasseswithmembernames class * {
     @butterknife.* <fields>;
@@ -124,31 +125,18 @@ public void *(***);
     @com.squareup.otto.Produce public *;
 }
 
-# rxjava
--keep class rx.schedulers.Schedulers {
-    public static <methods>;
-}
--keep class rx.schedulers.ImmediateScheduler {
-    public <methods>;
-}
--keep class rx.schedulers.TestScheduler {
-    public <methods>;
-}
--keep class rx.schedulers.Schedulers {
-    public static ** test();
-}
--keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
-    long producerIndex;
-    long consumerIndex;
-}
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-    long producerNode;
-    long consumerNode;
-}
-
 # glide (https://github.com/bumptech/glide)
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
     **[] $VALUES;
     public *;
 }
+
+#okhttp
+-dontwarn javax.annotation.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
+
+-dontwarn sun.misc.**
