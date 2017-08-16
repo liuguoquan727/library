@@ -59,7 +59,7 @@ dependencies {
   compile "com.trello.rxlifecycle2:rxlifecycle-navi:${RXLIFECYCLE_VERSION}"
 
   // 友盟数据统计
-  compile "com.umeng.analytics:analytics:${ANALYTICS_VERSION}"
+  compile 'com.umeng.analytics:analytics:latest.integration'
   // glide系列
   compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
   compile "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
