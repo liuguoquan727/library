@@ -14,21 +14,30 @@
       style="?attr/toolbarStyle"
       android:visibility="visible"
       />
+  <EditText
+      android:id="@+id/input"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      />
   <TextView
       android:layout_marginTop="10dp"
       android:id="@+id/normal"
       android:layout_width="match_parent"
+      android:background="?selectableItemBackground"
       android:layout_height="40dp"
       android:gravity="center"
-      android:text="normal"
+      android:text="打开"
+      android:visibility="gone"
       />
   <TextView
       android:id="@+id/loading"
       android:layout_marginTop="10dp"
       android:layout_width="match_parent"
+      android:background="?selectableItemBackground"
       android:layout_height="40dp"
       android:gravity="center"
-      android:text="loading"
+      android:text="打开"
+      android:visibility="visible"
       />
   <TextView
       android:id="@+id/empty"
@@ -37,6 +46,7 @@
       android:layout_height="40dp"
       android:gravity="center"
       android:text="empty"
+      android:visibility="gone"
       />
   <TextView
       android:id="@+id/error"
@@ -45,6 +55,7 @@
       android:layout_width="match_parent"
       android:layout_height="40dp"
       android:text="error"
+      android:visibility="gone"
       />
   <com.mdroid.lib.core.view.StateViewLayout
       android:id="@+id/state_layout"

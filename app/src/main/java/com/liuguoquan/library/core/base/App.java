@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core;
+package com.liuguoquan.library.core.base;
 
 import com.mdroid.lib.core.base.BaseApp;
 

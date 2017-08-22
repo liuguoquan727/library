@@ -46,11 +46,8 @@ public class BaseWebView extends WebView {
   private void init() {
     setWebViewClient(new MyWebViewClient());
     setWebChromeClient(new MyWebChromeClient());
-
     WebSettings webSettings = getSettings();
-    webSettings.setUserAgentString(
-        webSettings.getUserAgentString() + " chargerlink/" + AndroidUtils.getVersionName(
-            getContext()));
+    webSettings.setUserAgentString(webSettings.getUserAgentString() + "/ydbus");
     webSettings.setLoadWithOverviewMode(true);
     webSettings.setUseWideViewPort(true);
     webSettings.setJavaScriptEnabled(true);
@@ -159,8 +156,8 @@ public class BaseWebView extends WebView {
         getContext().startActivity(intent);
         return true;
       }
-      // 处理其他链接
-      return false;
+
+      return true;
     }
   }
 }
