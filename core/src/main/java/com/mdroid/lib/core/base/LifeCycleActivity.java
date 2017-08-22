@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Message;
 import com.mdroid.PausedHandler;
 import com.mdroid.lifecycle.LifecycleDispatcher;
-import com.trello.navi2.component.support.NaviAppCompatActivity;
 import java.lang.ref.WeakReference;
 
 /**
