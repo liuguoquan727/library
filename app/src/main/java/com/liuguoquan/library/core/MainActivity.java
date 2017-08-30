@@ -3,6 +3,8 @@ package com.liuguoquan.library.core;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
@@ -85,6 +87,11 @@ public class MainActivity extends BaseActivity {
         //mStateLayout.switchStatus(Status.STATUS_ERROR);
         break;
     }
+  }
+
+  @Override public void onCreate(@Nullable Bundle savedInstanceState,
+      @Nullable PersistableBundle persistentState) {
+    super.onCreate(savedInstanceState, persistentState);
   }
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {

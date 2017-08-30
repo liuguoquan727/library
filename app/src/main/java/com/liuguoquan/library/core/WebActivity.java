@@ -6,6 +6,7 @@ import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
@@ -75,6 +76,8 @@ public class WebActivity extends BaseBrowseActivity {
         startActivity(intent);
         return true;
       }
+
+      Log.d("lgq", "shouldOverrideUrlLoading: " + url);
 
       // 处理其他链接
       Map<String, String> extraHeaders = new HashMap<String, String>();
