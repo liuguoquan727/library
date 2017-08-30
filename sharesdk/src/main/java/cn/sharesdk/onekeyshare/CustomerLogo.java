@@ -8,12 +8,12 @@
 
 package cn.sharesdk.onekeyshare;
 
-import cn.sharesdk.framework.Platform;
-import cn.sharesdk.framework.Platform.ShareParams;
+import android.graphics.Bitmap;
+import android.view.View.OnClickListener;
 
-/** 自定义不同平台分享不同内容的接口 */
-public interface ShareContentCustomizeCallback {
-
-	public void onShare(Platform platform, ShareParams paramsToShare);
-
+/** 九宫格自定义的图标对象 */
+public class CustomerLogo {
+  public String label;
+  public Bitmap logo;
+  public OnClickListener listener;
 }
