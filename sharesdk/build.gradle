@@ -21,6 +21,11 @@ android {
     sourceCompatibility rootProject.ext.javaVersion
     targetCompatibility rootProject.ext.javaVersion
   }
+  sourceSets {
+    main {
+      jniLibs.srcDirs = ['libs']
+    }
+  }
 }
 
 dependencies {
