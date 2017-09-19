@@ -56,6 +56,7 @@ public class BaseBrowseActivity extends BaseActivity {
   @Override public void onBackPressed() {
     if (mWebView != null && mWebView.canGoBack()) {
       mWebView.goBack();
+      return;
     }
     super.onBackPressed();
   }

@@ -83,6 +83,15 @@ public class Analysis {
     }
   }
 
+  public static void onEventValue(Context context, String eventId, HashMap<String, String> map,
+      int duration) {
+    if (BaseApp.Instance().isDebug()) return;
+    if (!initialed) init(context);
+    if (UM) {
+      MobclickAgent.onEventValue(context, eventId, map, duration);
+    }
+  }
+
   private static boolean isDebug(Context context) {
     try {
       PackageInfo packageInfo =

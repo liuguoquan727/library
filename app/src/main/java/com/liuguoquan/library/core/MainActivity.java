@@ -2,6 +2,7 @@ package com.liuguoquan.library.core;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -49,6 +50,7 @@ public class MainActivity extends BaseActivity {
     mText.setText("");
 
     mInput.setText("http://m.szdjx.com/test/testpay/demo/wxH5MicroAuthPaymentRequest.aspx");
+    mText.setText(Build.CPU_ABI);
   }
 
   @Override public BasePresenter initPresenter() {
