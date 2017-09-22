@@ -356,7 +356,6 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
     this.mHandler.resume();
     LifecycleDispatcher.get().onFragmentResumed(this);
     Analysis.onPageStart(getActivity(), this.getClass().getName());
-    Analysis.onResume(getActivity());
   }
 
   @CallSuper public void onPause() {
@@ -364,7 +363,6 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
     super.onPause();
     LifecycleDispatcher.get().onFragmentPaused(this);
     Analysis.onPageEnd(getActivity(), this.getClass().getName());
-    Analysis.onPause(getActivity());
   }
 
   public void onStop() {
@@ -405,7 +403,6 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
 
   protected void processMessage(Message message) {
   }
-
 
   private static class Handler extends PausedHandler {
     private WeakReference<BaseFragment> mFragment;
