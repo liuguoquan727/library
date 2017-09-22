@@ -356,13 +356,15 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
     this.mHandler.resume();
     LifecycleDispatcher.get().onFragmentResumed(this);
     Analysis.onPageStart(getActivity(), getPageTitle());
+    Analysis.onResume(getActivity());
   }
 
   @CallSuper public void onPause() {
-    Analysis.onPageEnd(getActivity(), getPageTitle());
     this.mHandler.pause();
     super.onPause();
     LifecycleDispatcher.get().onFragmentPaused(this);
+    Analysis.onPageEnd(getActivity(), this.getClass().getName());
+    Analysis.onPause(getActivity());
   }
 
   public void onStop() {

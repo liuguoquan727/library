@@ -60,12 +60,14 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
 
   @Override @CallSuper protected void onResume() {
     super.onResume();
+    Analysis.onPageStart(this, this.getClass().getName());
     Analysis.onResume(this);
   }
 
   @Override @CallSuper protected void onPause() {
-    Analysis.onPause(this);
     super.onPause();
+    Analysis.onPageEnd(this, this.getClass().getName());
+    Analysis.onPause(this);
   }
 
   @Override @CallSuper public void finish() {
