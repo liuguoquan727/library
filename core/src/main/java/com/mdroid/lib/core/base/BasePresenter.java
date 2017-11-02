@@ -4,7 +4,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Description：Presenter的基类，如果有使用rxJava进行耗时操作，需调用{@link #addSubscription(Disposable)}}
+ * Description：Presenter的基类，如果有使用rxJava进行耗时操作，需调用{@link #addDisposable(Disposable)}}
  */
 public abstract class BasePresenter<T> {
 

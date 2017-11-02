@@ -36,7 +36,7 @@ public abstract class PermissionFragment<V extends AppBaseView, T extends AppBas
   // 相机权限请求 start
   //////////////////////////////
   public void showCameraWithCheck() {
-    PermissionFragmentPermissionsDispatcher.showCameraWithCheck(this);
+    PermissionFragmentPermissionsDispatcher.showCameraWithPermissionCheck(this);
   }
 
   @NeedsPermission({ Manifest.permission.CAMERA }) public void showCamera() {
@@ -63,7 +63,8 @@ public abstract class PermissionFragment<V extends AppBaseView, T extends AppBas
   // 媒体文件选择请求 start
   //////////////////////////////
   public void showMediaSelectWithCheck(Bundle bundle, int requestCode) {
-    PermissionFragmentPermissionsDispatcher.showMediaSelectWithCheck(this, bundle, requestCode);
+    PermissionFragmentPermissionsDispatcher.showMediaSelectWithPermissionCheck(this, bundle,
+        requestCode);
   }
 
   @NeedsPermission({ Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE })
@@ -91,7 +92,7 @@ public abstract class PermissionFragment<V extends AppBaseView, T extends AppBas
   // 存储权限请求 start
   //////////////////////////////
   public void showWriteStorageWithCheck() {
-    PermissionFragmentPermissionsDispatcher.showWriteStorageWithCheck(this);
+    PermissionFragmentPermissionsDispatcher.showWriteStorageWithPermissionCheck(this);
   }
 
   @NeedsPermission({ Manifest.permission.WRITE_EXTERNAL_STORAGE }) public void showWriteStorage() {
@@ -118,7 +119,7 @@ public abstract class PermissionFragment<V extends AppBaseView, T extends AppBas
 
   //读取电话权限
   public void showReadPhoneWithCheck() {
-    PermissionFragmentPermissionsDispatcher.showReadPhoneWithCheck(this);
+    PermissionFragmentPermissionsDispatcher.showReadPhoneWithPermissionCheck(this);
   }
 
   @NeedsPermission({ Manifest.permission.READ_PHONE_STATE }) public void showReadPhone() {
