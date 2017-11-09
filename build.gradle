@@ -1,13 +1,18 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Top-level build file where you can add configuration options layout.layouts.common to all sub-projects/modules.
 
 buildscript {
+  ext.kotlin_version = '1.1.51'
   repositories {
+    google()
     jcenter()
+    maven {
+      url "https://maven.google.com"
+    }
     mavenCentral()
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:3.0.0'
-
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
     classpath "com.jakewharton:butterknife-gradle-plugin:${BUTTERKNIFE_VERSION}"
@@ -17,6 +22,7 @@ buildscript {
 
 allprojects {
   repositories {
+    google()
     jcenter()
     maven {
       url "https://maven.google.com"
@@ -29,7 +35,7 @@ ext {
   targetSdkVersion = TARGET_SDK_VERSION.toInteger()
   compileSdkVersion = COMPILE_SDK_VERSION.toInteger()
   buildToolsVersion = "${BUILD_TOOLS_VERSION}"
-  javaVersion = JavaVersion.VERSION_1_7
+  javaVersion = JavaVersion.VERSION_1_8
   javaVersion_retrolambda = JavaVersion.VERSION_1_8
 }
 

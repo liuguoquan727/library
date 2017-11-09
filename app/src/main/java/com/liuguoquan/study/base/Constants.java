@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core.base;
+package com.liuguoquan.study.base;
 
 import android.text.TextUtils;
 import com.mdroid.lib.core.base.BaseExtraKeys;

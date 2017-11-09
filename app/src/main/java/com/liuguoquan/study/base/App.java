@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core.base;
+package com.liuguoquan.study.base;
 
 import com.mdroid.lib.core.base.BaseApp;
 
@@ -7,6 +7,13 @@ import com.mdroid.lib.core.base.BaseApp;
  */
 
 public class App extends BaseApp {
+
+  private static App mInstance;
+
+  public static App getInstance() {
+    return mInstance;
+  }
+
   @Override public boolean isDebug() {
     return true;
   }

@@ -24,7 +24,7 @@ import java.util.List;
  * as varrgs parameters to {@link String#format(String, Object...)} Also, the current file
  * and line is automatically appended to the tag (this is only done if debug is enabled
  * for performance reasons). COMMON PITFALLS: * Make sure you put the exception FIRST in
- * the call. A common mistake is to place it last as is the android.util.Log convention,
+ * the call. A layout.layouts.common mistake is to place it last as is the android.util.Log convention,
  * but then it will get treated as varargs parameter. * vararg parameters are not appended
  * to the log message! You must insert them into the log message using %s or another
  * similar format parameter Usage Examples: Ln.v("hello there"); Ln.d("%s %s", "hello",

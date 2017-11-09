@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core.base;
+package com.liuguoquan.study.base;
 
 import android.Manifest;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.view.View;
-import com.liuguoquan.library.core.R;
+import com.liuguoquan.study.R;
 import com.mdroid.lib.core.dialog.CenterDialog;
 import com.mdroid.lib.core.dialog.IDialog;
 import com.orhanobut.dialogplus.DialogPlus;

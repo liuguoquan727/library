@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core.base;
+package com.liuguoquan.study.base;
 
 /**
  * 常量(Key 都放在这, 防止重复)

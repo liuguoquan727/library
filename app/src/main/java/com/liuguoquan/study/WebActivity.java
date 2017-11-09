@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core;
+package com.liuguoquan.study;
 
 import android.content.Intent;
 import android.net.Uri;

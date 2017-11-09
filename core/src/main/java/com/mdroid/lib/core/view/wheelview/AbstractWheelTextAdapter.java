@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * Abstract wheel adapter provides common functionality for adapters.
+ * Abstract wheel adapter provides layout.layouts.common functionality for adapters.
  */
 public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
 

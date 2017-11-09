@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core;
+package com.liuguoquan.study.core;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

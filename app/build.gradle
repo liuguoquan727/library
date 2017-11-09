@@ -1,18 +1,25 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
   compileSdkVersion 26
-  buildToolsVersion "26.0.2"
   defaultConfig {
-    applicationId "com.liuguoquan.library.core"
+    applicationId "com.liuguoquan.study"
     minSdkVersion 15
     targetSdkVersion 23
     versionCode 1
     versionName "1.0"
+    multiDexEnabled true
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    manifestPlaceholders = [APP_NAME: "CoreLibrary"]
+    manifestPlaceholders = [APP_NAME: "AndroidStudy"]
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+      }
+    }
   }
   buildTypes {
     release {
@@ -30,7 +37,6 @@ dependencies {
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support:appcompat-v7:26.1.0'
   compile 'com.android.support.constraint:constraint-layout:1.0.2'
   testCompile 'junit:junit:4.12'
   compile project(':core')
@@ -41,4 +47,9 @@ dependencies {
   // 权限管理
   compile "com.github.hotchemi:permissionsdispatcher:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
+
+  implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  implementation "android.arch.persistence.room:runtime:1.0.0"
+  annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+  implementation "android.arch.persistence.room:rxjava2:1.0.0"
 }

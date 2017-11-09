@@ -1,4 +1,4 @@
-package com.liuguoquan.library.core;
+package com.liuguoquan.study.core;
 
 import org.junit.Test;
 

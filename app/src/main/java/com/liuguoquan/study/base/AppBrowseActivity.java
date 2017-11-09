@@ -1,10 +1,10 @@
-package com.liuguoquan.library.core.base;
+package com.liuguoquan.study.base;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import com.liuguoquan.library.core.R;
+import com.liuguoquan.study.R;
 import com.mdroid.lib.core.base.BaseBrowseActivity;
 import com.mdroid.lib.core.base.BaseChromeClient;
 import com.mdroid.lib.core.base.BaseExtraKeys;
