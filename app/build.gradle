@@ -27,7 +27,23 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-  configurations.all {
+
+  sourceSets {
+    main {
+      res.srcDirs = ['src/main/res/layouts/main',
+                     'src/main/res/layouts/room',
+                     'src/main/res/layouts/common',
+                     'src/main/res/layouts',
+                     'src/main/res']
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+configurations.all {
     resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
   }
 }
@@ -52,4 +68,14 @@ dependencies {
   implementation "android.arch.persistence.room:runtime:1.0.0"
   annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
   implementation "android.arch.persistence.room:rxjava2:1.0.0"
+  compile 'com.orhanobut:logger:2.1.1'
+  //dagger
+  compile "com.google.dagger:dagger:${DAGGER_VERSION}"
+  compile "com.google.dagger:dagger-android-support:${DAGGER_VERSION}"
+  annotationProcessor "com.google.dagger:dagger-compiler:${DAGGER_VERSION}"
+  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
+
+  implementation 'com.jakewharton.timber:timber:4.6.0'
+  compile 'com.facebook.stetho:stetho:1.5.0'
+  compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 }

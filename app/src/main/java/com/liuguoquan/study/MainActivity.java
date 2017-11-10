@@ -7,8 +7,10 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.jaeger.library.StatusBarUtil;
 import com.liuguoquan.study.base.AppBaseActivity;
+import com.liuguoquan.study.module.room.RoomUI;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
+import com.mdroid.lib.core.utils.ActivityUtil;
 
 public class MainActivity extends AppBaseActivity {
 
@@ -35,8 +37,11 @@ public class MainActivity extends AppBaseActivity {
     return null;
   }
 
-  @OnClick({}) public void onClick(View v) {
+  @OnClick({ R.id.room }) public void onClick(View v) {
     switch (v.getId()) {
+      case R.id.room:
+        ActivityUtil.startActivity(this, RoomUI.class);
+        break;
     }
   }
 
