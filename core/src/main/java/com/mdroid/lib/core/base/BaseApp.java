@@ -2,8 +2,8 @@ package com.mdroid.lib.core.base;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Application;
 import android.os.Message;
-import android.support.multidex.MultiDexApplication;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.internal.bind.TypeAdapters;
@@ -16,7 +16,7 @@ import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.lifecycle.LifecycleDispatcher;
 
-public abstract class BaseApp extends MultiDexApplication {
+public abstract class BaseApp extends Application {
   @SuppressLint("StaticFieldLeak") protected static BaseApp mInstance;
   protected boolean mVisible = false;
   protected PausedHandler mHandler;

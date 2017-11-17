@@ -1,5 +1,7 @@
 package com.liuguoquan.study.base;
 
+import android.content.Context;
+import android.support.multidex.MultiDex;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.liuguoquan.study.BuildConfig;
@@ -16,6 +18,11 @@ import timber.log.Timber;
  */
 
 public class App extends BaseApp {
+
+  @Override protected void attachBaseContext(Context base) {
+    super.attachBaseContext(base);
+    MultiDex.install(this);
+  }
 
   private static App mInstance;
 

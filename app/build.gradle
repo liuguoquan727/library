@@ -74,5 +74,5 @@ dependencies {
   compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
   compile 'com.squareup.retrofit2:retrofit:2.3.0'
-
+  compile "com.android.support:multidex:${MULTIDEX_VERSION}"
 }
