@@ -31,7 +31,9 @@ dependencies {
 
   compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
 
-  compile "com.github.chrisbanes.photoview:library:${PHOTOVIEW_VERSION}"
+  compile("com.github.chrisbanes.photoview:library:${PHOTOVIEW_VERSION}") {
+    exclude group: 'com.android.support', module: 'support-v4'
+  }
 }
 
 task sourcesJar(type: Jar) {

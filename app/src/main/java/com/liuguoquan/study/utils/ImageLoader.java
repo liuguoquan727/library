@@ -1,12 +1,12 @@
-package com.mdroid.lib.core.utils;
+package com.liuguoquan.study.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import java.io.File;
-import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 /**
@@ -31,11 +31,10 @@ public class ImageLoader {
    * @param urlOrPath 图片url或本地路径
    */
   public static void loadAsRadius(ImageView target, int defImage, int radius, String urlOrPath) {
-    Glide.with(sContext)
-        .load(urlOrPath)
-        .bitmapTransform(new RoundedCornersTransformation(sContext, radius, 0))
-        .placeholder(defImage)
-        .into(target);
+    RequestOptions options =
+        new RequestOptions().bitmapTransform(new RoundedCornersTransformation(sContext, radius, 0)).
+            placeholder(defImage);
+    Glide.with(sContext).load(urlOrPath).apply(options).into(target);
   }
 
   /**
@@ -47,10 +46,9 @@ public class ImageLoader {
    * @param file 图片文件
    */
   public static void loadAsRadius(ImageView target, int defImage, int radius, File file) {
-    Glide.with(sContext)
-        .load(file)
-        .bitmapTransform(new RoundedCornersTransformation(sContext, radius, 0))
-        .placeholder(defImage)
+    Glide.with(sContext).load(file)
+        //.bitmapTransform(new RoundedCornersTransformation(sContext, radius, 0))
+        //.placeholder(defImage)
         .into(target);
   }
 
@@ -64,10 +62,9 @@ public class ImageLoader {
    */
   public static void loadAsRadius(ImageView target, int defImage, int radius,
       @DrawableRes int resId) {
-    Glide.with(sContext)
-        .load(resId)
-        .bitmapTransform(new RoundedCornersTransformation(sContext, radius, 0))
-        .placeholder(defImage)
+    Glide.with(sContext).load(resId)
+        //.bitmapTransform(new RoundedCornersTransformation(sContext, radius, 0))
+        //.placeholder(defImage)
         .into(target);
   }
 
@@ -79,10 +76,9 @@ public class ImageLoader {
    * @param urlOrPath 图片url或本地路径
    */
   public static void loadAsCircle(ImageView target, int defImage, String urlOrPath) {
-    Glide.with(sContext)
-        .load(urlOrPath)
-        .bitmapTransform(new CropCircleTransformation(sContext))
-        .placeholder(defImage)
+    Glide.with(sContext).load(urlOrPath)
+        //.bitmapTransform(new CropCircleTransformation(sContext))
+        //.placeholder(defImage)
         .into(target);
   }
 
@@ -94,10 +90,9 @@ public class ImageLoader {
    * @param file 图片文件
    */
   public static void loadAsCircle(ImageView target, int defImage, File file) {
-    Glide.with(sContext)
-        .load(file)
-        .bitmapTransform(new CropCircleTransformation(sContext))
-        .placeholder(defImage)
+    Glide.with(sContext).load(file)
+        //.bitmapTransform(new CropCircleTransformation(sContext))
+        //.placeholder(defImage)
         .into(target);
   }
 
@@ -109,10 +104,9 @@ public class ImageLoader {
    * @param resId 图片资源id
    */
   public static void loadAsCircle(ImageView target, int defImage, @DrawableRes int resId) {
-    Glide.with(sContext)
-        .load(resId)
-        .bitmapTransform(new CropCircleTransformation(sContext))
-        .placeholder(defImage)
+    Glide.with(sContext).load(resId)
+        //.bitmapTransform(new CropCircleTransformation(sContext))
+        //.placeholder(defImage)
         .into(target);
   }
 
@@ -124,12 +118,11 @@ public class ImageLoader {
    * @param urlOrPath 图片url或本地路径
    */
   public static void load(ImageView target, int defImage, String urlOrPath) {
-    Glide.with(sContext)
-        .load(urlOrPath)
-        .asBitmap()
-        .placeholder(defImage)
-        .fitCenter()
-        .centerCrop()
+    Glide.with(sContext).load(urlOrPath)
+        //.asBitmap()
+        //.placeholder(defImage)
+        //        .fitCenter()
+        //        .centerCrop()
         .into(target);
   }
 
@@ -141,12 +134,11 @@ public class ImageLoader {
    * @param file 图片文件
    */
   public static void load(ImageView target, int defImage, File file) {
-    Glide.with(sContext)
-        .load(file)
-        .asBitmap()
-        .placeholder(defImage)
-        .fitCenter()
-        .centerCrop()
+    Glide.with(sContext).load(file)
+        //.asBitmap()
+        //.placeholder(defImage)
+        //.fitCenter()
+        //.centerCrop()
         .into(target);
   }
 
@@ -158,12 +150,11 @@ public class ImageLoader {
    * @param resId 图片资源id
    */
   public static void load(ImageView target, int defImage, @DrawableRes int resId) {
-    Glide.with(sContext)
-        .load(resId)
-        .asBitmap()
-        .placeholder(defImage)
-        .fitCenter()
-        .centerCrop()
+    Glide.with(sContext).load(resId)
+        //.asBitmap()
+        //.placeholder(defImage)
+        //.fitCenter()
+        //.centerCrop()
         .into(target);
   }
 }

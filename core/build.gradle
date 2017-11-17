@@ -29,6 +29,7 @@ dependencies {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
   compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+  compile "com.android.support:support-annotations:${SUPPORT_VERSION}"
   testCompile 'junit:junit:4.12'
 
   compile "com.android.support:multidex:${MULTIDEX_VERSION}"
@@ -39,7 +40,10 @@ dependencies {
   compile project(':dialogplus')
 
   // butterknife系列
-  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
+  compile("com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}") {
+    exclude group: 'com.android.support', module: 'support-annotations'
+    exclude group: 'com.android.support', module: 'support-compat'
+  }
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
   // okhttp系列
   compile "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
@@ -48,21 +52,43 @@ dependencies {
   // rxJava系列
   compile "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION}"
   compile "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION}"
-  compile "com.jakewharton.rxbinding2:rxbinding:${RXBINDING_VERSION}"
-  compile "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${RXBINDING_SUPPORT_VERSION}"
-  compile "com.jakewharton.rxbinding2:rxbinding-support-v4:${RXBINDING_SUPPORT_VERSION}"
+  compile("com.jakewharton.rxbinding2:rxbinding:${RXBINDING_VERSION}") {
+    exclude group: 'com.android.support', module: 'support-annotations'
+    exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+  }
+  compile(
+      "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${RXBINDING_SUPPORT_VERSION}") {
+    exclude group: 'com.android.support', module: 'recyclerview-v7'
+  }
+  compile("com.jakewharton.rxbinding2:rxbinding-support-v4:${RXBINDING_SUPPORT_VERSION}") {
+    exclude group: 'com.android.support', module: 'support-core-ui'
+  }
 
   // If you want to bind to Android-specific lifecycles
-  compile "com.trello.rxlifecycle2:rxlifecycle-android:${RXLIFECYCLE_VERSION}"
+  compile("com.trello.rxlifecycle2:rxlifecycle-android:${RXLIFECYCLE_VERSION}") {
+    exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+  }
   // If you want to use Navi for providers
-  compile "com.trello.rxlifecycle2:rxlifecycle-navi:${RXLIFECYCLE_VERSION}"
-
-  // 友盟数据统计
-  compile 'com.umeng.analytics:analytics:latest.integration'
+  compile("com.trello.rxlifecycle2:rxlifecycle-navi:${RXLIFECYCLE_VERSION}") {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  }
   // glide系列
   compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+  annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
   compile "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
-  compile "com.afollestad.material-dialogs:core:${MATERIAL_DIALOGS}"
+  // 友盟数据统计
+  compile 'com.umeng.analytics:analytics:latest.integration'
+  compile("com.afollestad.material-dialogs:core:${MATERIAL_DIALOGS}") {
+    exclude group: 'me.zhanghai.android.materialprogressbar', module: 'library'
+    exclude group: 'com.android.support', module: 'support-annotations'
+    exclude group: 'com.android.support', module: 'support-v13'
+    exclude group: 'com.android.support', module: 'recyclerview-v7'
+    exclude group: 'com.android.support', module: 'appcompat-v7'
+  }
+  compile("me.zhanghai.android.materialprogressbar:library:1.4.2") {
+    exclude group: 'com.android.support', module: 'support-annotations'
+    exclude group: 'com.android.support', module: 'appcompat-v7'
+  }
 }
 
 task sourcesJar(type: Jar) {

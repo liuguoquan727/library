@@ -29,7 +29,6 @@ dependencies {
 
   compile fileTree(dir: 'libs', include: ['*.jar'])
   compile "com.squareup:otto:${OTTO_VERSION}"
-  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
   compile "com.nineoldandroids:library:${NINEOLDANDROIDS_VERSION}"
   compile "io.paperdb:paperdb:${PAPERDB_VERSION}"
   compile project(':core-library')
