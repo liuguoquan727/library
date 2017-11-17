@@ -1,10 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
   compileSdkVersion 26
+  buildToolsVersion "26.0.3"
   defaultConfig {
     applicationId "com.liuguoquan.study"
     minSdkVersion 15
@@ -38,47 +37,42 @@ android {
     }
   }
 
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
-
 configurations.all {
     resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
   }
 }
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  compile fileTree(dir: 'libs', include: ['*.jar'])
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+  compile 'com.android.support.constraint:constraint-layout:1.0.2'
   testCompile 'junit:junit:4.12'
   compile project(':core')
   compile project(':sharesdk')
-  implementation 'com.jaeger.statusbarutil:library:1.4.0'
-  implementation "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
+  compile project(':ImagePick')
+  compile 'com.jaeger.statusbarutil:library:1.4.0'
+  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
   // 权限管理
-  implementation "com.github.hotchemi:permissionsdispatcher:${PERMISSIONSDISPATCHER_VERSION}"
+  compile "com.github.hotchemi:permissionsdispatcher:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
 
-  implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-  implementation "android.arch.persistence.room:runtime:1.0.0"
+  compile "android.arch.persistence.room:runtime:1.0.0"
   annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
-  implementation "android.arch.persistence.room:rxjava2:1.0.0"
-  implementation 'com.orhanobut:logger:2.1.1'
+  compile "android.arch.persistence.room:rxjava2:1.0.0"
+  compile 'com.orhanobut:logger:2.1.1'
   //dagger
-  implementation "com.google.dagger:dagger:${DAGGER_VERSION}"
-  implementation "com.google.dagger:dagger-android-support:${DAGGER_VERSION}"
+  compile "com.google.dagger:dagger:${DAGGER_VERSION}"
+  compile "com.google.dagger:dagger-android-support:${DAGGER_VERSION}"
   annotationProcessor "com.google.dagger:dagger-compiler:${DAGGER_VERSION}"
   annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
 
-  implementation 'com.jakewharton.timber:timber:4.6.0'
-  implementation 'com.facebook.stetho:stetho:1.5.0'
-  implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+  compile 'com.jakewharton.timber:timber:4.6.0'
+  compile 'com.facebook.stetho:stetho:1.5.0'
+  compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
-  implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+  compile 'com.squareup.retrofit2:retrofit:2.3.0'
 
 }

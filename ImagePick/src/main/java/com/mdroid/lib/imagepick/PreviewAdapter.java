@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.mdroid.lib.imagepick.utils.SystemUiHider;
 import com.mdroid.lib.imagepick.view.RecyclingPagerAdapter;
@@ -53,10 +54,9 @@ public class PreviewAdapter extends RecyclingPagerAdapter {
       holder = (ViewHolder) convertView.getTag();
     }
     final Resource resource = mResources.get(position);
+    RequestOptions options = new RequestOptions().fitCenter();
     Glide.with(mActivity)
-        .load(new File(resource.getFilePath()))
-        .asBitmap()
-        .fitCenter()
+        .asBitmap().load(new File(resource.getFilePath())).apply(options)
         .into(new BitmapImageViewTarget(holder.mImage) {
           @Override protected void setResource(Bitmap resource) {
             super.setResource(resource);

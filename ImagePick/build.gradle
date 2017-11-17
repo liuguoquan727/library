@@ -4,7 +4,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
-
+  buildToolsVersion rootProject.ext.buildToolsVersion
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
@@ -30,7 +30,7 @@ dependencies {
   testCompile 'junit:junit:4.12'
 
   compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
-
+  annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
   compile("com.github.chrisbanes.photoview:library:${PHOTOVIEW_VERSION}") {
     exclude group: 'com.android.support', module: 'support-v4'
   }

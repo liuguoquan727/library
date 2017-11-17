@@ -124,15 +124,15 @@ public class RoomUI extends AppBaseFragment {
   }
 
   private void doInsert() {
-    User user = new User();
-    user.userId = "111";
-    user.name = "liu";
-    user.age = 20;
-    Address address = new Address();
-    address.city = "shenzhen";
-    user.address = address;
     Observable.create(new ObservableOnSubscribe<Long>() {
       @Override public void subscribe(ObservableEmitter<Long> e) throws Exception {
+        User user = new User();
+        user.userId = "111";
+        user.name = "liu";
+        user.age = 20;
+        Address address = new Address();
+        address.city = "shenzhen";
+        user.address = address;
         try {
           User user1 = DBRoom.getInstance().getUserDao().getUserById(user.userId);
           if (user1 == null) {
