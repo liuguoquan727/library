@@ -1,5 +1,6 @@
 package com.liuguoquan.study;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -7,6 +8,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.jaeger.library.StatusBarUtil;
 import com.liuguoquan.study.base.AppBaseActivity;
+import com.liuguoquan.study.module.databind.DataBindingUI;
+import com.liuguoquan.study.module.faceplusplus.OcrUI;
 import com.liuguoquan.study.module.room.RoomUI;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
@@ -37,10 +40,18 @@ public class MainActivity extends AppBaseActivity {
     return null;
   }
 
-  @OnClick({ R.id.room }) public void onClick(View v) {
+  @OnClick({ R.id.room, R.id.data_binding, R.id.image_ocr }) public void onClick(View v) {
     switch (v.getId()) {
       case R.id.room:
         ActivityUtil.startActivity(this, RoomUI.class);
+        break;
+      case R.id.data_binding:
+        Intent intent = new Intent(this, DataBindingUI.class);
+        ActivityUtil.startActivity(this, intent);
+        break;
+      case R.id.image_ocr:
+        intent = new Intent(this, OcrUI.class);
+        ActivityUtil.startActivity(this, intent);
         break;
     }
   }

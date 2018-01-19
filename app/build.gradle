@@ -20,6 +20,11 @@ android {
       }
     }
   }
+
+  dataBinding {
+    enabled = true
+  }
+
   buildTypes {
     release {
       minifyEnabled true
@@ -30,6 +35,9 @@ android {
   sourceSets {
     main {
       res.srcDirs = ['src/main/res/layouts/main',
+                     'src/main/res/layouts/module/architecture',
+                     'src/main/res/layouts/module/databinding',
+                     'src/main/res/layouts/module',
                      'src/main/res/layouts/room',
                      'src/main/res/layouts/common',
                      'src/main/res/layouts',
@@ -37,42 +45,49 @@ android {
     }
   }
 
-configurations.all {
+  configurations.all {
     resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
   }
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  api fileTree(dir: 'libs', include: ['*.jar'])
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support.constraint:constraint-layout:1.0.2'
-  testCompile 'junit:junit:4.12'
-  compile project(':core')
-  compile project(':sharesdk')
-  compile project(':ImagePick')
-  compile 'com.jaeger.statusbarutil:library:1.4.0'
-  compile "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
+  api 'com.android.support.constraint:constraint-layout:1.0.2'
+  testApi 'junit:junit:4.12'
+  api project(':core')
+  api project(':sharesdk')
+  api project(':ImagePick')
+  api 'com.jaeger.statusbarutil:library:1.4.0'
+  api "com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}"
   annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
   // 权限管理
-  compile "com.github.hotchemi:permissionsdispatcher:${PERMISSIONSDISPATCHER_VERSION}"
+  api "com.github.hotchemi:permissionsdispatcher:${PERMISSIONSDISPATCHER_VERSION}"
   annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${PERMISSIONSDISPATCHER_VERSION}"
 
-  compile "android.arch.persistence.room:runtime:1.0.0"
+  api "android.arch.persistence.room:runtime:1.0.0"
   annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
-  compile "android.arch.persistence.room:rxjava2:1.0.0"
-  compile 'com.orhanobut:logger:2.1.1'
+  api "android.arch.persistence.room:rxjava2:1.0.0"
+
+  api "android.arch.lifecycle:extensions:1.0.0"
+  annotationProcessor "android.arch.lifecycle:compiler:1.0.0"
+
+  api 'com.orhanobut:logger:2.1.1'
   //dagger
-  compile "com.google.dagger:dagger:${DAGGER_VERSION}"
-  compile "com.google.dagger:dagger-android-support:${DAGGER_VERSION}"
+  api "com.google.dagger:dagger:${DAGGER_VERSION}"
   annotationProcessor "com.google.dagger:dagger-compiler:${DAGGER_VERSION}"
-  annotationProcessor "com.google.dagger:dagger-android-processor:${DAGGER_VERSION}"
 
-  compile 'com.jakewharton.timber:timber:4.6.0'
-  compile 'com.facebook.stetho:stetho:1.5.0'
-  compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+  api 'com.jakewharton.timber:timber:4.6.0'
+  api 'com.facebook.stetho:stetho:1.5.0'
+  api 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
-  compile 'com.squareup.retrofit2:retrofit:2.3.0'
-  compile "com.android.support:multidex:${MULTIDEX_VERSION}"
+  api "com.android.support:multidex:${MULTIDEX_VERSION}"
+
+  // retrofit系列
+  api "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
+  api "com.squareup.retrofit2:converter-gson:${CONVERTER_GSON_VERSION}"
+  api "com.squareup.retrofit2:adapter-rxjava2:${ADAPTER_RXJAVA_VERSION}"
+
 }

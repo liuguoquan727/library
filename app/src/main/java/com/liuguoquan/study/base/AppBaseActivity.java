@@ -32,6 +32,12 @@ public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseAc
     toolBar.setBackgroundResource(R.color.main_color_normal);
     TextView tvTitle = UIUtil.setCenterTitle(toolBar, title);
     ToolBarUtils.updateTitleText(tvTitle);
+    toolBar.setNavigationIcon(R.drawable.ic_back);
+    toolBar.setNavigationOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        finish();
+      }
+    });
   }
 
   @Override public void onDestroy() {

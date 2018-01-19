@@ -19,6 +19,7 @@
       android:layout_height="match_parent"
       >
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -29,6 +30,24 @@
           android:background="?selectableItemBackground"
           android:gravity="center"
           android:text="Room 框架"
+          />
+      <TextView
+          android:id="@+id/data_binding"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:background="?selectableItemBackground"
+          android:gravity="center"
+          android:layout_marginTop="10dp"
+          android:text="Data Binding"
+          />
+      <TextView
+          android:id="@+id/image_ocr"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:background="?selectableItemBackground"
+          android:gravity="center"
+          android:layout_marginTop="10dp"
+          android:text="图像识别"
           />
     </LinearLayout>
   </android.support.v4.widget.NestedScrollView>
