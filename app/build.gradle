@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 
 android {
-  compileSdkVersion 26
-  buildToolsVersion "26.0.3"
+  compileSdkVersion 27
+  buildToolsVersion "27.0.3"
   defaultConfig {
     applicationId "com.liuguoquan.study"
     minSdkVersion 15
@@ -89,5 +89,9 @@ dependencies {
   api "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
   api "com.squareup.retrofit2:converter-gson:${CONVERTER_GSON_VERSION}"
   api "com.squareup.retrofit2:adapter-rxjava2:${ADAPTER_RXJAVA_VERSION}"
+
+  //bugly
+  api 'com.tencent.bugly:crashreport:2.6.6.1'
+  api 'com.tencent.bugly:nativecrashreport:3.3.1'
 
 }

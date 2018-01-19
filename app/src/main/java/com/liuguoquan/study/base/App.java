@@ -16,6 +16,7 @@ import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
+import com.tencent.bugly.crashreport.CrashReport;
 import java.lang.reflect.Modifier;
 import okhttp3.OkHttpClient;
 import timber.log.Timber;
@@ -53,6 +54,7 @@ public class App extends BaseApp {
     }
     Stetho.initializeWithDefaults(this);
     new OkHttpClient().newBuilder().addNetworkInterceptor(new StethoInterceptor()).build();
+    CrashReport.initCrashReport(getApplicationContext(), "3613d5bb7b", false);
   }
 
   public static synchronized Gson getAppGson() {

@@ -1,7 +1,6 @@
 package com.mdroid.utils.text;
 
 import android.os.Build;
-import android.support.v4.view.KeyEventCompat;
 import android.text.Layout;
 import android.text.NoCopySpan;
 import android.text.Selection;
@@ -71,7 +70,7 @@ public class LinkMovementMethod extends ScrollingMovementMethod {
     switch (keyCode) {
       case KeyEvent.KEYCODE_DPAD_CENTER:
       case KeyEvent.KEYCODE_ENTER:
-        if (KeyEventCompat.metaStateHasNoModifiers(movementMetaState)) {
+        if (event.hasModifiers(movementMetaState)) {
           if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0 && action(
               CLICK, widget, buffer)) {
             return true;

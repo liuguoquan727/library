@@ -42,11 +42,6 @@ public class LifeCycleActivity extends NaviAppCompatActivity {
     LifecycleDispatcher.get().onActivityStopped(this);
   }
 
-  @Override protected void onSaveInstanceState(Bundle outState) {
-    super.onSaveInstanceState(outState);
-    LifecycleDispatcher.get().onActivitySaveInstanceState(this, outState);
-  }
-
   @Override protected void onDestroy() {
     super.onDestroy();
     LifecycleDispatcher.get().onActivityDestroyed(this);
