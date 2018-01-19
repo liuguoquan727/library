@@ -25,13 +25,13 @@ configurations.all {
 }
 
 dependencies {
-  testCompile "junit:junit:${JUNIT_VERSION}"
+  testApi "junit:junit:${JUNIT_VERSION}"
 
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile "com.squareup:otto:${OTTO_VERSION}"
-  compile "com.nineoldandroids:library:${NINEOLDANDROIDS_VERSION}"
-  compile "io.paperdb:paperdb:${PAPERDB_VERSION}"
-  compile project(':core-library')
+  api fileTree(dir: 'libs', include: ['*.jar'])
+  api "com.squareup:otto:${OTTO_VERSION}"
+  api "com.nineoldandroids:library:${NINEOLDANDROIDS_VERSION}"
+  api "io.paperdb:paperdb:${PAPERDB_VERSION}"
+  api project(':core-library')
 }
 
 task sourcesJar(type: Jar) {

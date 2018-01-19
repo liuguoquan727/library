@@ -12,8 +12,8 @@ android {
 }
 
 dependencies {
-  testCompile "junit:junit:${JUNIT_VERSION}"
-  provided "com.android.support:support-annotations:${SUPPORT_VERSION}"
+  testApi "junit:junit:${JUNIT_VERSION}"
+  compileOnly "com.android.support:support-annotations:${SUPPORT_VERSION}"
 }
 
 task sourcesJar(type: Jar) {

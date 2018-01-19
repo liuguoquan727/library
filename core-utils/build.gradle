@@ -25,12 +25,12 @@ allprojects {
 }
 
 dependencies {
-  testCompile "junit:junit:${JUNIT_VERSION}"
+  testApi "junit:junit:${JUNIT_VERSION}"
 
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
-  provided "com.android.support:support-annotations:${SUPPORT_VERSION}"
-  compile "de.greenrobot:java-common:${COMMON_VERSION}"
+  api fileTree(dir: 'libs', include: ['*.jar'])
+  api "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+  compileOnly "com.android.support:support-annotations:${SUPPORT_VERSION}"
+  api "de.greenrobot:java-common:${COMMON_VERSION}"
 }
 
 task sourcesJar(type: Jar) {

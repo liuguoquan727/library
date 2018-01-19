@@ -21,9 +21,9 @@ android {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
-  compile "com.android.support:recyclerview-v7:${SUPPORT_VERSION}"
+  api fileTree(dir: 'libs', include: ['*.jar'])
+  api "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+  api "com.android.support:recyclerview-v7:${SUPPORT_VERSION}"
 }
 
 task sourcesJar(type: Jar) {
