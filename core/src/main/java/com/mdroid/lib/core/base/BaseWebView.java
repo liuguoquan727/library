@@ -54,8 +54,12 @@ public class BaseWebView extends WebView {
     webSettings.setSavePassword(false);
     webSettings.setDomStorageEnabled(true);
     webSettings.setGeolocationEnabled(true);
-    webSettings.setAllowFileAccess(true);
-    webSettings.setAppCacheEnabled(true);
+    webSettings.setAllowFileAccess(false);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+      webSettings.setAllowFileAccessFromFileURLs(false);
+      webSettings.setAllowUniversalAccessFromFileURLs(false);
+    }
+    webSettings.setAppCacheEnabled(false);
     setBackgroundColor(0xFFFFFFFF);
   }
 
