@@ -24,7 +24,10 @@
     <activity
         android:name=".WebActivity"
         android:screenOrientation="portrait"/>
-    <activity android:name=".module.databind.DataBindingUI">
+    <activity
+        android:name=".module.databind.DataBindingUI"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.NoActionBar.SwipeBack">
     </activity>
     <activity
         android:name=".module.faceplusplus.OcrUI"

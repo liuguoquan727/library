@@ -8,6 +8,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import com.jaeger.library.StatusBarUtil;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.base.AppBaseActivity;
 import com.liuguoquan.study.bean.localbean.User;
@@ -16,11 +17,14 @@ import com.liuguoquan.study.utils.ToolBarUtils;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.UIUtil;
+import com.r0adkll.slidr.Slidr;
+import java.util.Random;
 
 public class DataBindingUI extends AppBaseActivity {
 
   @BindView(R.id.tool_bar) Toolbar mToolbar;
   private User mUser;
+  private int mColor;
 
   @Override protected Status getCurrentStatus() {
     return null;
@@ -43,6 +47,7 @@ public class DataBindingUI extends AppBaseActivity {
   }
 
   @Override protected void onCreate(Bundle savedInstanceState) {
+    Slidr.attach(this);
     super.onCreate(savedInstanceState);
     ModuleDatabindingUiBinding binding =
         DataBindingUtil.setContentView(this, R.layout.module_databinding_ui);
@@ -54,6 +59,11 @@ public class DataBindingUI extends AppBaseActivity {
     mUser.age = "22";
     mUser.address = "Shenzhen";
     binding.setUser(mUser);
+
+    Random random = new Random();
+    mColor = 0xff000000 | random.nextInt(0xffffff);
+    mToolbar.setBackgroundColor(mColor);
+    StatusBarUtil.setColorForSwipeBack(this, mColor, 38);
   }
 
   @OnClick({ R.id.update }) public void onClick(View v) {

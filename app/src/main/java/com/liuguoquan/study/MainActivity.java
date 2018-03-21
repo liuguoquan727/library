@@ -31,6 +31,10 @@ public class MainActivity extends AppBaseActivity {
     return R.layout.activity_main;
   }
 
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+  }
+
   @Override public void initData(Bundle savedInstanceState) {
     StatusBarUtil.setColor(this, getResources().getColor(R.color.main_color_normal), 0);
     requestBaseInit(mToolBar, getPageTitle());
