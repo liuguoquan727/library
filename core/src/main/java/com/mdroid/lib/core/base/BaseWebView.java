@@ -51,11 +51,11 @@ public class BaseWebView extends WebView {
     webSettings.setLoadWithOverviewMode(true);
     webSettings.setUseWideViewPort(true);
     webSettings.setJavaScriptEnabled(true);
+    webSettings.setSavePassword(false);
     webSettings.setDomStorageEnabled(true);
     webSettings.setGeolocationEnabled(true);
     webSettings.setAllowFileAccess(true);
     webSettings.setAppCacheEnabled(true);
-
     setBackgroundColor(0xFFFFFFFF);
   }
 
@@ -143,7 +143,7 @@ public class BaseWebView extends WebView {
 
     @Override
     public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-      handler.proceed();
+      handler.cancel();
     }
 
     @Override public boolean shouldOverrideUrlLoading(WebView view, String url) {
