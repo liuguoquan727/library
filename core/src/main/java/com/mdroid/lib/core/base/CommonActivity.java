@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.view.View;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
-import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.utils.AndroidUtils;
 import com.mdroid.utils.Ln;
 import java.util.ArrayList;
@@ -80,11 +79,9 @@ public class CommonActivity extends LifeCycleActivity {
 
   @Override @CallSuper protected void onResume() {
     super.onResume();
-    Analysis.onResume(this);
   }
 
   @Override @CallSuper protected void onPause() {
-    Analysis.onPause(this);
     super.onPause();
   }
 
