@@ -50,7 +50,7 @@ public class BaseWebView extends WebView {
     webSettings.setUserAgentString(webSettings.getUserAgentString() + "/ydbus");
     webSettings.setLoadWithOverviewMode(true);
     webSettings.setUseWideViewPort(true);
-    webSettings.setJavaScriptEnabled(true);
+    webSettings.setJavaScriptEnabled(false);
     webSettings.setSavePassword(false);
     webSettings.setDomStorageEnabled(true);
     webSettings.setGeolocationEnabled(true);
