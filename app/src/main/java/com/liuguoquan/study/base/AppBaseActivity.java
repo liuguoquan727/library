@@ -20,6 +20,16 @@ public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseAc
 
   private Unbinder unbinder;
 
+  @Override protected void bind() {
+    unbinder = ButterKnife.bind(this);
+  }
+
+  @Override protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
+    }
+  }
+
   /**
    * 数据等加载指示器，默认空实现
    *
@@ -32,15 +42,7 @@ public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseAc
 
   }
 
-  @Override protected void bind() {
-    unbinder = ButterKnife.bind(this);
-  }
 
-  @Override protected void unbind() {
-    if (unbinder != null) {
-      unbinder.unbind();
-    }
-  }
 
   protected void requestBaseInit(Toolbar toolBar, String title) {
     toolBar.setBackgroundResource(R.color.main_color_normal);

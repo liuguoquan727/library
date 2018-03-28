@@ -21,6 +21,16 @@ public abstract class AppBaseFragment<V extends AppBaseView, T extends AppBaseFr
 
   private Unbinder unbinder;
 
+  @Override protected void bind(View view) {
+    unbinder = ButterKnife.bind(this, view);
+  }
+
+  @Override protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
+    }
+  }
+
   @Override public void onDestroy() {
     super.onDestroy();
   }
@@ -38,15 +48,6 @@ public abstract class AppBaseFragment<V extends AppBaseView, T extends AppBaseFr
   @Override public void onNotify(EventBusEvent event) {
   }
 
-  @Override protected void bind(View view) {
-    unbinder = ButterKnife.bind(this, view);
-  }
-
-  @Override protected void unbind() {
-    if (unbinder != null) {
-      unbinder.unbind();
-    }
-  }
 
   /**
    * 初始化toolbar等通用基础view
