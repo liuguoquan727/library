@@ -1,9 +1,10 @@
 package com.liuguoquan.study.base;
 
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.utils.ToolBarUtils;
 import com.mdroid.lib.core.base.BaseActivity;
@@ -17,6 +18,8 @@ import com.mdroid.lib.core.utils.UIUtil;
 public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseActivityPresenter<V>>
     extends BaseActivity<V, T> implements BaseView<T>, EventBusEvent.INotify {
 
+  private Unbinder unbinder;
+
   /**
    * 数据等加载指示器，默认空实现
    *
@@ -29,8 +32,14 @@ public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseAc
 
   }
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+  @Override protected void bind() {
+    unbinder = ButterKnife.bind(this);
+  }
+
+  @Override protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
+    }
   }
 
   protected void requestBaseInit(Toolbar toolBar, String title) {

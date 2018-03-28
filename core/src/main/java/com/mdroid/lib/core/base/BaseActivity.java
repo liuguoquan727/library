@@ -3,8 +3,6 @@ package com.mdroid.lib.core.base;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.view.View;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
 import com.mdroid.lib.core.utils.Analysis;
@@ -23,7 +21,6 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
       NaviLifecycle.createActivityLifecycleProvider(this);
 
   public T mPresenter;
-  private Unbinder mUnbinder;
 
   protected abstract Status getCurrentStatus();
 
@@ -38,10 +35,14 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
    */
   protected abstract void initData(Bundle savedInstanceState);
 
+  protected abstract void bind();
+
+  protected abstract void unbind();
+
   @Override @CallSuper protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(getContentView());
-    mUnbinder = ButterKnife.bind(this);
+    bind();
     EventBus.bus().register(this);
     mPresenter = initPresenter();
     if (mPresenter != null) {
@@ -88,16 +89,12 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
     Toost.message(resId);
   }
 
-
   @Override @CallSuper protected void onDestroy() {
     super.onDestroy();
     EventBus.bus().unregister(this);
-    if (mUnbinder != null) {
-      mUnbinder.unbind();
-    }
+    unbind();
     if (mPresenter != null) {
       mPresenter.onDetach();
     }
   }
-
 }

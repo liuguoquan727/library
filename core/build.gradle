@@ -44,12 +44,6 @@ dependencies {
   api project(':core-base')
   api project(':dialogplus')
 
-  // butterknife系列
-  api("com.jakewharton:butterknife:${BUTTERKNIFE_VERSION}") {
-    exclude group: 'com.android.support', module: 'support-annotations'
-    exclude group: 'com.android.support', module: 'support-compat'
-  }
-  annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTERKNIFE_VERSION}"
   // okhttp系列
   api "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
   api "com.squareup.okhttp3:logging-interceptor:${OK_HTTP_VERSION}"

@@ -14,8 +14,6 @@ import android.view.ViewStub;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import com.mdroid.PausedHandler;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
@@ -58,13 +56,16 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
   private PausedHandler mHandler = new BaseFragment.Handler(this);
   private ViewGroup mRootView;
   private Status mStatus;
-  private Unbinder mUnbinder;
   private RelativeLayout mToolBarContainer;
   private boolean mHasStatusBar;
   private View mStatusBar;
   private Toolbar mToolbar;
   private View mToolbarShadow;
   private SystemBarConfig mSystemBarConfig;
+
+  protected abstract void bind(View view);
+
+  protected abstract void unbind();
 
   @Override public final void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -96,7 +97,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
     } else {
       switchStatus(mStatus);
     }
-    mUnbinder = ButterKnife.bind(this, mContentView);
+    bind(mContentView);
     LifecycleDispatcher.get().onFragmentCreateView(this, inflater, container, savedInstanceState);
     super.onCreateView(inflater, container, savedInstanceState);
     return mRootView;
@@ -110,7 +111,7 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
 
   @CallSuper @Override public void onDestroyView() {
     super.onDestroyView();
-    mUnbinder.unbind();
+    unbind();
     mRootView = mTitleContainer = mContentContainer = null;
     mContentView = mErrorView = mLoadingView = mEmptyView = null;
     mInflater = null;

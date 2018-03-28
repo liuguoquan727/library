@@ -11,7 +11,8 @@ import com.mdroid.lib.core.R;
  * Created by liuguoquan on 2017/7/27.
  */
 
-public class BaseBrowseActivity extends BaseActivity {
+public abstract class BaseBrowseActivity extends BaseActivity {
+
 
   protected ProgressBar mProgressBar;
   protected BaseWebView mWebView;

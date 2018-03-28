@@ -12,6 +12,8 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.jaeger.library.StatusBarUtil;
 import com.mdroid.lib.core.base.BaseBrowseActivity;
 import com.mdroid.lib.core.base.BaseChromeClient;
@@ -25,6 +27,8 @@ import java.util.Map;
  */
 
 public class WebActivity extends BaseBrowseActivity {
+
+  private Unbinder unbinder;
 
   @Override public void initData(Bundle savedInstanceState) {
     StatusBarUtil.setColor(this, getResources().getColor(R.color.main_color_normal), 0);
@@ -46,6 +50,16 @@ public class WebActivity extends BaseBrowseActivity {
       mWebView.setWebViewClient(new MyWebViewClient());
       mWebView.setWebChromeClient(new BaseChromeClient(mProgressBar));
       mWebView.loadUrl(mUrl);
+    }
+  }
+
+  @Override protected void bind() {
+    unbinder = ButterKnife.bind(this);
+  }
+
+  @Override protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
     }
   }
 

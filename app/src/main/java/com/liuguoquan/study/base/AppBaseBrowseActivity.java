@@ -5,6 +5,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.liuguoquan.study.R;
 import com.mdroid.lib.core.base.BaseActivity;
 import com.mdroid.lib.core.base.BaseExtraKeys;
@@ -26,6 +28,7 @@ public class AppBaseBrowseActivity extends BaseActivity {
   protected String mUrl;
   protected String mTitle;
   protected TextView mTitleView;
+  private Unbinder unbinder;
 
   @Override public Status getCurrentStatus() {
     return null;
@@ -41,6 +44,16 @@ public class AppBaseBrowseActivity extends BaseActivity {
 
   @Override public BasePresenter initPresenter() {
     return null;
+  }
+
+  @Override protected void bind() {
+    unbinder = ButterKnife.bind(this);
+  }
+
+  @Override protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
+    }
   }
 
   @Override public void initData(Bundle savedInstanceState) {

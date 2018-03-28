@@ -12,7 +12,7 @@ import com.mdroid.lib.core.utils.UIUtil;
 /**
  * Description：web页面的基类
  */
-public class BaseBrowseFragment extends BaseFragment {
+public abstract class BaseBrowseFragment extends BaseFragment {
 
   protected ProgressBar mProgressBar;
   protected BaseWebView mWebView;

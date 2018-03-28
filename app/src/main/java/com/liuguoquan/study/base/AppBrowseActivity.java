@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.liuguoquan.study.R;
 import com.mdroid.lib.core.base.BaseBrowseActivity;
 import com.mdroid.lib.core.base.BaseChromeClient;
@@ -17,6 +19,8 @@ import com.mdroid.lib.core.base.BaseWebView;
  */
 
 public class AppBrowseActivity extends BaseBrowseActivity {
+
+  private Unbinder unbinder;
 
   @Override public void initData(Bundle savedInstanceState) {
     Bundle bundle = getIntent().getExtras();
@@ -32,6 +36,16 @@ public class AppBrowseActivity extends BaseBrowseActivity {
       mWebView.setWebViewClient(new WebViewClient());
       mWebView.setWebChromeClient(new BaseChromeClient(mProgressBar));
       mWebView.loadUrl(mUrl);
+    }
+  }
+
+  @Override protected void bind() {
+    unbinder = ButterKnife.bind(this);
+  }
+
+  @Override protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
     }
   }
 
