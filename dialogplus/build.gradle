@@ -13,7 +13,7 @@ android {
 
 dependencies {
   testApi "junit:junit:${JUNIT_VERSION}"
-  compileOnly "com.android.support:support-annotations:${SUPPORT_VERSION}"
+  api "com.android.support:support-annotations:${SUPPORT_VERSION}"
 }
 
 task sourcesJar(type: Jar) {
