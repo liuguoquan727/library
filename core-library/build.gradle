@@ -29,8 +29,6 @@ configurations.all {
 }
 
 dependencies {
-  testApi "junit:junit:${JUNIT_VERSION}"
-
   api fileTree(dir: 'libs', include: ['*.jar'])
   api project(':core-utils')
   api "com.android.support:support-v13:${SUPPORT_VERSION}"

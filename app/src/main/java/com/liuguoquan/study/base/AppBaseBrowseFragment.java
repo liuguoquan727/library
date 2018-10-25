@@ -3,8 +3,6 @@ package com.liuguoquan.study.base;
 import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import com.mdroid.lib.core.base.BaseBrowseFragment;
 import com.mdroid.lib.core.base.BaseChromeClient;
 
@@ -13,16 +11,11 @@ import com.mdroid.lib.core.base.BaseChromeClient;
  */
 public class AppBaseBrowseFragment extends BaseBrowseFragment {
 
-  private Unbinder unbinder;
 
   @Override protected void bind(View view) {
-    unbinder = ButterKnife.bind(this, view);
   }
 
   @Override protected void unbind() {
-    if (unbinder != null) {
-      unbinder.unbind();
-    }
   }
 
   @Override protected void initView(View parent) {

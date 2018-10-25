@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 import com.jaeger.library.StatusBarUtil;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.base.AppBaseActivity;
@@ -22,36 +19,40 @@ import java.util.Random;
 
 public class DataBindingUI extends AppBaseActivity {
 
-  @BindView(R.id.tool_bar) Toolbar mToolbar;
+  Toolbar mToolbar;
   private User mUser;
   private int mColor;
 
-  @Override protected Status getCurrentStatus() {
+  @Override
+  protected Status getCurrentStatus() {
     return null;
   }
 
-  @Override protected String getPageTitle() {
+  @Override
+  protected String getPageTitle() {
     return null;
   }
 
-  @Override protected BasePresenter initPresenter() {
+  @Override
+  protected BasePresenter initPresenter() {
     return null;
   }
 
-  @Override protected int getContentView() {
+  @Override
+  protected int getContentView() {
     return R.layout.module_databinding_ui;
   }
 
-  @Override protected void initData(Bundle savedInstanceState) {
-
+  @Override
+  protected void initData(Bundle savedInstanceState) {
   }
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
     Slidr.attach(this);
     super.onCreate(savedInstanceState);
     ModuleDatabindingUiBinding binding =
         DataBindingUtil.setContentView(this, R.layout.module_databinding_ui);
-    ButterKnife.bind(this);
     requestBaseInit(mToolbar, "Data Binding");
     mUser = new User();
     mUser.name = "liu";
@@ -66,7 +67,7 @@ public class DataBindingUI extends AppBaseActivity {
     StatusBarUtil.setColorForSwipeBack(this, mColor, 38);
   }
 
-  @OnClick({ R.id.update }) public void onClick(View v) {
+  public void onClick(View v) {
     switch (v.getId()) {
       case R.id.update:
         mUser.setName("lee");
@@ -79,10 +80,12 @@ public class DataBindingUI extends AppBaseActivity {
     TextView tvTitle = UIUtil.setCenterTitle(toolBar, title);
     ToolBarUtils.updateTitleText(tvTitle);
     toolBar.setNavigationIcon(R.drawable.ic_back);
-    toolBar.setNavigationOnClickListener(new View.OnClickListener() {
-      @Override public void onClick(View v) {
-        finish();
-      }
-    });
+    toolBar.setNavigationOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+            finish();
+          }
+        });
   }
 }

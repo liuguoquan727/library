@@ -3,8 +3,6 @@ package com.liuguoquan.study.module.architecture;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-import butterknife.BindView;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.base.AppBaseFragment;
 import com.mdroid.lib.core.base.BasePresenter;
@@ -17,10 +15,6 @@ import com.mdroid.lib.core.base.Status;
  */
 
 public class UserProfileFragment extends AppBaseFragment {
-
-  @BindView(R.id.name) TextView mNameView;
-  @BindView(R.id.sex) TextView mSexView;
-  @BindView(R.id.age) TextView mAgeView;
 
   private UserProfileViewModel mViewModel;
 

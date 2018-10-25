@@ -4,7 +4,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion '28.0.2'
+  buildToolsVersion rootProject.ext.buildToolsVersion
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
@@ -12,7 +12,6 @@ android {
 }
 
 dependencies {
-  testApi "junit:junit:${JUNIT_VERSION}"
   api "com.android.support:support-annotations:${SUPPORT_VERSION}"
 }
 

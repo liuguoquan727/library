@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/core-library/core-library.iml" filepath="$PROJECT_DIR$/core-library/core-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/core-utils/core-utils.iml" filepath="$PROJECT_DIR$/core-utils/core-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/dialogplus/dialogplus.iml" filepath="$PROJECT_DIR$/dialogplus/dialogplus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sharesdk/sharesdk.iml" filepath="$PROJECT_DIR$/sharesdk/sharesdk.iml" />
     </modules>
   </component>
 </project>

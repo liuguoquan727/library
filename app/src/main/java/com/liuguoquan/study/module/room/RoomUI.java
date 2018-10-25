@@ -2,7 +2,6 @@ package com.liuguoquan.study.module.room;
 
 import android.os.Bundle;
 import android.view.View;
-import butterknife.OnClick;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.base.AppBaseFragment;
 import com.liuguoquan.study.db.DBRoom;
@@ -52,7 +51,6 @@ public class RoomUI extends AppBaseFragment {
     requestBaseInit(getPageTitle());
   }
 
-  @OnClick({ R.id.create, R.id.insert, R.id.query, R.id.delete, R.id.update })
   public void onClick(View v) {
     switch (v.getId()) {
       case R.id.create:

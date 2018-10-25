@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import butterknife.BindView;
-import butterknife.OnClick;
 import com.jaeger.library.StatusBarUtil;
 import com.liuguoquan.study.base.AppBaseActivity;
 import com.liuguoquan.study.module.databind.DataBindingUI;
@@ -17,34 +15,36 @@ import com.mdroid.lib.core.utils.ActivityUtil;
 
 public class MainActivity extends AppBaseActivity {
 
-  @BindView(R.id.tool_bar) Toolbar mToolBar;
+    Toolbar mToolBar;
 
-  @Override public Status getCurrentStatus() {
+    @Override
+    public Status getCurrentStatus() {
     return Status.STATUS_NORMAL;
   }
 
-  @Override public String getPageTitle() {
+    @Override
+    public String getPageTitle() {
     return "首页";
   }
 
-  @Override protected int getContentView() {
+    @Override
+    protected int getContentView() {
     return R.layout.activity_main;
   }
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-  }
-
-  @Override public void initData(Bundle savedInstanceState) {
+    @Override
+    public void initData(Bundle savedInstanceState) {
     StatusBarUtil.setColor(this, getResources().getColor(R.color.main_color_normal), 0);
+        mToolBar = findViewById(R.id.tool_bar);
     requestBaseInit(mToolBar, getPageTitle());
   }
 
-  @Override public BasePresenter initPresenter() {
+    @Override
+    public BasePresenter initPresenter() {
     return null;
   }
 
-  @OnClick({ R.id.room, R.id.data_binding, R.id.image_ocr }) public void onClick(View v) {
+    public void onClick(View v) {
     switch (v.getId()) {
       case R.id.room:
         ActivityUtil.startActivity(this, RoomUI.class);
@@ -60,7 +60,8 @@ public class MainActivity extends AppBaseActivity {
     }
   }
 
-  @Override public void finish() {
+    @Override
+    public void finish() {
     super.finish();
     overridePendingTransition(R.anim.fade_in_center, R.anim.fade_out_center);
   }
