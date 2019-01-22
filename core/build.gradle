@@ -35,6 +35,12 @@ dependencies {
   api project(':BaseRecyclerAdapter')
   api project(':core-base')
   api project(':dialogplus')
+  api project(':core-library')
+  api project(":core-utils")
+
+
+  api "com.squareup:otto:${OTTO_VERSION}"
+
 
   // okhttp系列
   api "com.squareup.okhttp3:okhttp:${OK_HTTP_VERSION}"
@@ -78,8 +84,6 @@ dependencies {
     exclude group: 'com.android.support', module: 'support-annotations'
     exclude group: 'com.android.support', module: 'appcompat-v7'
   }
-  // 友盟数据统计
-  api "com.umeng.analytics:analytics:6.1.4"
 }
 
 task sourcesJar(type: Jar) {

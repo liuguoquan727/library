@@ -12,7 +12,6 @@ import com.mdroid.PausedHandler;
 import com.mdroid.lib.core.json.DoubleAdapter;
 import com.mdroid.lib.core.json.IntegerAdapter;
 import com.mdroid.lib.core.json.LongAdapter;
-import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.lib.core.utils.ImageLoader;
 import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.lifecycle.LifecycleDispatcher;
@@ -74,7 +73,6 @@ public abstract class BaseApp extends Application {
 
   private void init() {
     Library.init(this);
-    Analysis.init(mInstance);
     Toost.init(mInstance);
     ImageLoader.init(this);
     mHandler = new Handler();

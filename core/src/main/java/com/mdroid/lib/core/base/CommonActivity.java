@@ -10,7 +10,6 @@ import androidx.annotation.CallSuper;
 import androidx.fragment.app.Fragment;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
-import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.utils.AndroidUtils;
 import java.util.ArrayList;
 
@@ -76,11 +75,9 @@ public class CommonActivity extends LifeCycleActivity {
 
   @Override @CallSuper protected void onResume() {
     super.onResume();
-    Analysis.onResume(this);
   }
 
   @Override @CallSuper protected void onPause() {
-    Analysis.onPause(this);
     super.onPause();
   }
 

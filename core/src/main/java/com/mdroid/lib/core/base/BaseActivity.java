@@ -5,7 +5,6 @@ import android.view.View;
 import androidx.annotation.CallSuper;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
-import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.utils.AndroidUtils;
 import com.trello.rxlifecycle2.LifecycleProvider;
@@ -61,14 +60,10 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCy
 
   @Override @CallSuper protected void onResume() {
     super.onResume();
-    Analysis.onPageStart(this, this.getClass().getName());
-    Analysis.onResume(this);
   }
 
   @Override @CallSuper protected void onPause() {
     super.onPause();
-    Analysis.onPageEnd(this, this.getClass().getName());
-    Analysis.onPause(this);
   }
 
   @Override @CallSuper public void finish() {

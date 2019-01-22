@@ -17,7 +17,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.mdroid.PausedHandler;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
-import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.lib.core.utils.SystemBarConfig;
 import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.lifecycle.LifecycleDispatcher;
@@ -356,14 +355,12 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFr
     super.onResume();
     this.mHandler.resume();
     LifecycleDispatcher.get().onFragmentResumed(this);
-    Analysis.onPageStart(getActivity(), this.getClass().getName());
   }
 
   @CallSuper public void onPause() {
     this.mHandler.pause();
     super.onPause();
     LifecycleDispatcher.get().onFragmentPaused(this);
-    Analysis.onPageEnd(getActivity(), this.getClass().getName());
   }
 
   public void onStop() {

@@ -26,11 +26,12 @@ configurations.all {
 
 dependencies {
   api fileTree(dir: 'libs', include: ['*.jar'])
-  api "com.squareup:otto:${OTTO_VERSION}"
   api "com.nineoldandroids:library:${NINEOLDANDROIDS_VERSION}"
   api "io.paperdb:paperdb:${PAPERDB_VERSION}"
   api "androidx.recyclerview:recyclerview:1.0.0"
+  api "androidx.fragment:fragment:1.0.0"
   api project(':core-library')
+  api project(':core-utils')
 }
 
 task sourcesJar(type: Jar) {

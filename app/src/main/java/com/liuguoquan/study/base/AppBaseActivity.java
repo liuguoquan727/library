@@ -56,9 +56,4 @@ public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseAc
                 }
             });
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
 }
