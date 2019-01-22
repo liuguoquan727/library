@@ -5,10 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.Browser;
-import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import androidx.annotation.Nullable;
 import com.mdroid.utils.Ln;
 
 public class URLSpan extends ClickableSpan {

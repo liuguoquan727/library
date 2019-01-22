@@ -1,8 +1,8 @@
 package com.mdroid.lib.core.base;
 
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
 import android.view.View;
+import androidx.annotation.CallSuper;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
 import com.mdroid.lib.core.utils.Analysis;

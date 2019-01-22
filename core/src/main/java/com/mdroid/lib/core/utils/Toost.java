@@ -2,10 +2,10 @@ package com.mdroid.lib.core.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.StringRes;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.widget.Toast;
+import androidx.annotation.StringRes;
 import com.mdroid.lib.core.R;
 import com.mdroid.utils.AndroidUtils;
 

@@ -1,7 +1,7 @@
 package com.mdroid;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.mdroid.utils.Ln;
 import io.paperdb.Book;
 import io.paperdb.Paper;

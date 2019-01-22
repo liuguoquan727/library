@@ -1,10 +1,10 @@
 package com.mdroid.view.recyclerView;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;

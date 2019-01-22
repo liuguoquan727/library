@@ -1,8 +1,8 @@
 package com.mdroid.view.recyclerView.flexibledivider;
 
 import android.graphics.Canvas;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SizeDivider extends FlexibleDivider {
   private static final int DEFAULT_SIZE = 2;

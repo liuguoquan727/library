@@ -8,8 +8,8 @@ package com.mdroid.lib.core.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
+import androidx.annotation.DrawableRes;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import java.io.File;

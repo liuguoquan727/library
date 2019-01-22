@@ -3,8 +3,8 @@ package com.mdroid.lib.core.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 import com.mdroid.lib.core.base.CommonActivity;
 
 

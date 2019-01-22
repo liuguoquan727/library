@@ -1,7 +1,7 @@
 package com.liuguoquan.study.base;
 
-import android.support.annotation.CallSuper;
 import android.view.View;
+import androidx.annotation.CallSuper;
 import com.mdroid.lib.core.base.Status;
 
 /**

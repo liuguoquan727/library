@@ -6,7 +6,7 @@
     android:orientation="vertical"
     >
 
-  <android.support.v7.widget.Toolbar
+  <androidx.appcompat.widget.Toolbar
       android:id="@+id/tool_bar"
       android:layout_width="match_parent"
       android:layout_height="45dp"
@@ -14,7 +14,7 @@
       android:visibility="visible"
       style="?attr/toolbarStyle"
       />
-  <android.support.v4.widget.NestedScrollView
+  <androidx.core.widget.NestedScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       >
@@ -50,6 +50,6 @@
           android:text="图像识别"
           />
     </LinearLayout>
-  </android.support.v4.widget.NestedScrollView>
+  </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

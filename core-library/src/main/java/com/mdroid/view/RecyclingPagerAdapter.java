@@ -1,12 +1,12 @@
 package com.mdroid.view;
 
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
- * A {@link android.support.v4.view.PagerAdapter} which behaves like an {@link
+ * A {@link androidx.core.view.PagerAdapter} which behaves like an {@link
  * android.widget.Adapter} with view types and
  * view recycling.
  */

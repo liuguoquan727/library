@@ -1,12 +1,6 @@
 package com.liuguoquan.study.utils;
 
 import android.content.Context;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringRes;
-import android.support.design.widget.TabLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.StringRes;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.tabs.TabLayout;
 import com.liuguoquan.study.R;
 import com.mdroid.lib.recyclerview.BaseRecyclerViewAdapter;
 import com.mdroid.utils.AndroidUtils;
@@ -96,7 +96,7 @@ public class ToolBarUtils {
   public static ImageView addBtn2ToolbarRight(Toolbar toolbar, int resId) {
     Context context = toolbar.getContext();
     ImageView img = new ImageView(context, null,
-        android.support.v7.appcompat.R.attr.toolbarNavigationButtonStyle);
+        androidx.appcompat.R.attr.toolbarNavigationButtonStyle);
     img.setImageResource(resId);
     img.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
     Toolbar.LayoutParams params = new Toolbar.LayoutParams(Toolbar.LayoutParams.WRAP_CONTENT,

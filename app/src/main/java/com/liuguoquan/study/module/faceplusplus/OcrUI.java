@@ -1,8 +1,9 @@
 package com.liuguoquan.study.module.faceplusplus;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.base.AppBaseActivity;
 import com.liuguoquan.study.bean.localbean.ApiResult;
@@ -16,55 +17,63 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Description:
  *
- * Created by liuguoquan on 2017/12/25 14:43.
+ * <p>Created by liuguoquan on 2017/12/25 14:43.
  */
-
 public class OcrUI extends AppBaseActivity {
 
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-  private OrcCondition mCondition = new OrcCondition();
 
-  @Override protected Status getCurrentStatus() {
-    return null;
-  }
+    private OrcCondition mCondition = new OrcCondition();
 
-  @Override protected String getPageTitle() {
-    return "图像识别";
-  }
+    @Override
+    protected Status getCurrentStatus() {
+        return null;
+    }
 
-  @Override protected BasePresenter initPresenter() {
-    return null;
-  }
+    @Override
+    protected String getPageTitle() {
+        return "图像识别";
+    }
 
-  @Override protected int getContentView() {
-    return R.layout.module_face_ocr_ui;
-  }
+    @Override
+    protected BasePresenter initPresenter() {
+        return null;
+    }
 
-  @Override protected void initData(Bundle savedInstanceState) {
-    requestBaseInit(mToolbar, getPageTitle());
-  }
+    @Override
+    protected int getContentView() {
+        return R.layout.module_face_ocr_ui;
+    }
+
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+        requestBaseInit(mToolbar, getPageTitle());
+    }
 
     public void onClick(View v) {
-    switch (v.getId()) {
-      case R.id.start:
-        doOcr();
-        break;
+        switch (v.getId()) {
+            case R.id.start:
+                doOcr();
+                break;
+        }
     }
-  }
 
-  private void doOcr() {
-    Api.getRecognizeTextApi()
-        .recognizetext(mCondition.faceApiKey, mCondition.faceApiSecret, mCondition.compare)
-        .subscribeOn(Schedulers.io())
-        .observeOn(PausedHandlerScheduler.from(getHandler()))
-        .subscribe(new Consumer<ApiResult>() {
-          @Override public void accept(ApiResult result) throws Exception {
-
-          }
-        }, new Consumer<Throwable>() {
-          @Override public void accept(Throwable throwable) throws Exception {
-
-          }
-        });
-  }
+    private void doOcr() {
+        Api.getRecognizeTextApi()
+            .recognizetext(mCondition.faceApiKey, mCondition.faceApiSecret, mCondition.compare)
+            .subscribeOn(Schedulers.io())
+            .observeOn(PausedHandlerScheduler.from(getHandler()))
+            .subscribe(
+                new Consumer<ApiResult>() {
+                    @Override
+                    public void accept(ApiResult result) throws Exception {
+                    }
+                },
+                new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
+                    }
+                });
+    }
 }

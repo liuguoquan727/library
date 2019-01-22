@@ -29,6 +29,7 @@ dependencies {
   api "com.squareup:otto:${OTTO_VERSION}"
   api "com.nineoldandroids:library:${NINEOLDANDROIDS_VERSION}"
   api "io.paperdb:paperdb:${PAPERDB_VERSION}"
+  api "androidx.recyclerview:recyclerview:1.0.0"
   api project(':core-library')
 }
 

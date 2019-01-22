@@ -1,6 +1,6 @@
 package com.liuguoquan.study.network;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.liuguoquan.study.base.App;
 import com.liuguoquan.study.network.api.RecognizeTextApi;
 import retrofit2.Retrofit;

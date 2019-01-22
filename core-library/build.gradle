@@ -30,14 +30,9 @@ configurations.all {
 
 dependencies {
   api fileTree(dir: 'libs', include: ['*.jar'])
+  api "androidx.fragment:fragment:1.0.0"
+  api "androidx.appcompat:appcompat:1.0.2"
   api project(':core-utils')
-  api "com.android.support:support-v13:${SUPPORT_VERSION}"
-  api "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
-  api "com.android.support:cardview-v7:${SUPPORT_VERSION}"
-  api "com.android.support:recyclerview-v7:${SUPPORT_VERSION}"
-  api "com.android.support:palette-v7:${SUPPORT_VERSION}"
-  api "com.android.support:design:${SUPPORT_VERSION}"
-  api "com.android.support:percent:${SUPPORT_VERSION}"
 }
 
 task sourcesJar(type: Jar) {

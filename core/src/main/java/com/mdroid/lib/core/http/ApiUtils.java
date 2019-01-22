@@ -1,6 +1,6 @@
 package com.mdroid.lib.core.http;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import com.mdroid.utils.Size;
 import java.io.File;
 import java.net.FileNameMap;

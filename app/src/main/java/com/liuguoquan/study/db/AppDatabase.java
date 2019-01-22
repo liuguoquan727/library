@@ -1,7 +1,7 @@
 package com.liuguoquan.study.db;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 import com.liuguoquan.study.db.dao.UserDao;
 import com.liuguoquan.study.db.entity.User;
 

@@ -18,7 +18,9 @@ import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.lifecycle.LifecycleDispatcher;
 
 public abstract class BaseApp extends Application {
-  @SuppressLint("StaticFieldLeak") protected static BaseApp mInstance;
+  @SuppressLint("StaticFieldLeak")
+  protected static BaseApp mInstance;
+
   protected boolean mVisible = false;
   protected PausedHandler mHandler;
   protected Gson mGson;
@@ -47,18 +49,24 @@ public abstract class BaseApp extends Application {
 
   public static synchronized Gson getGson() {
     if (mInstance.mGson == null) {
-      mInstance.mGson = new GsonBuilder().registerTypeAdapterFactory(
-          TypeAdapters.newFactory(int.class, Integer.class, new IntegerAdapter()))
-          .registerTypeAdapterFactory(
-              TypeAdapters.newFactory(double.class, Double.class, new DoubleAdapter()))
-          .registerTypeAdapterFactory(
-              TypeAdapters.newFactory(long.class, Long.class, new LongAdapter()))
-          .create();
+      mInstance.mGson =
+          new GsonBuilder()
+              .registerTypeAdapterFactory(
+                  TypeAdapters.newFactory(
+                      int.class, Integer.class, new IntegerAdapter()))
+              .registerTypeAdapterFactory(
+                  TypeAdapters.newFactory(
+                      double.class, Double.class, new DoubleAdapter()))
+              .registerTypeAdapterFactory(
+                  TypeAdapters.newFactory(
+                      long.class, Long.class, new LongAdapter()))
+              .create();
     }
     return mInstance.mGson;
   }
 
-  @Override public void onCreate() {
+  @Override
+  public void onCreate() {
     super.onCreate();
     mInstance = this;
     init();
@@ -72,15 +80,17 @@ public abstract class BaseApp extends Application {
     mHandler = new Handler();
 
     ActivityLifecycle lifecycle = new ActivityLifecycle();
-    lifecycle.setVisibleListener(new ActivityLifecycle.VisibleListener() {
-      @Override public void statusChange(boolean visible) {
-        if (visible) {
-          mHandler.resume();
-        } else {
-          mHandler.pause();
-        }
-      }
-    });
+    lifecycle.setVisibleListener(
+        new ActivityLifecycle.VisibleListener() {
+          @Override
+          public void statusChange(boolean visible) {
+            if (visible) {
+              mHandler.resume();
+            } else {
+              mHandler.pause();
+            }
+          }
+        });
     LifecycleDispatcher.registerActivityLifecycleCallbacks(this, lifecycle);
   }
 
@@ -91,7 +101,8 @@ public abstract class BaseApp extends Application {
     Handler() {
     }
 
-    @Override protected void processMessage(Message message) {
+    @Override
+    protected void processMessage(Message message) {
     }
   }
 }

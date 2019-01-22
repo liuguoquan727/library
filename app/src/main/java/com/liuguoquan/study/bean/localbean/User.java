@@ -1,7 +1,7 @@
 package com.liuguoquan.study.bean.localbean;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import com.liuguoquan.study.BR;
 
 /**

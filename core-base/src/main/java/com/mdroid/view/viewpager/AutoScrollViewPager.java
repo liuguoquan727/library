@@ -1,9 +1,9 @@
 package com.mdroid.view.viewpager;
 
 import android.content.Context;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import androidx.core.view.MotionEventCompat;
 
 public class AutoScrollViewPager extends LoopViewPager {
 

@@ -1,6 +1,6 @@
 package com.liuguoquan.study.module.architecture;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.view.View;
 import com.liuguoquan.study.R;

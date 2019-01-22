@@ -1,14 +1,14 @@
 package com.mdroid.lib.imagepick.base;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import com.mdroid.lib.imagepick.MediaSelectFragment;
 import com.mdroid.lib.imagepick.R;
 
 /**
- * Created by ouyangzn on 2016/11/16.<br/>
+ * Created by ouyangzn on 2016/11/16.<br>
  * Description：
  */
 public class ContainerActivity extends AppCompatActivity {
@@ -17,7 +17,8 @@ public class ContainerActivity extends AppCompatActivity {
 
   private String mFragmentName;
 
-  @Override public void onCreate(Bundle savedInstanceState) {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.image_pick_activity_container);
     initData(savedInstanceState);
@@ -36,7 +37,8 @@ public class ContainerActivity extends AppCompatActivity {
           fragment = newFragment();
         }
         if (fragment != null) {
-          getSupportFragmentManager().beginTransaction()
+          getSupportFragmentManager()
+              .beginTransaction()
               .replace(R.id.layout_container, fragment, mFragmentName)
               .commit();
         }

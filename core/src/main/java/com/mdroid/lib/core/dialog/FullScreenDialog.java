@@ -1,10 +1,10 @@
 package com.mdroid.lib.core.dialog;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.LayoutRes;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.DialogPlusBuilder;
 import com.orhanobut.dialogplus.OnDismissListener;

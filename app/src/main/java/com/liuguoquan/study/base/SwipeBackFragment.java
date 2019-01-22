@@ -1,9 +1,9 @@
 package com.liuguoquan.study.base;
 
 import android.os.Bundle;
-import android.support.annotation.FloatRange;
-import android.support.annotation.Nullable;
 import android.view.View;
+import androidx.annotation.FloatRange;
+import androidx.annotation.Nullable;
 import me.yokeyword.fragmentation.SupportFragment;
 import me.yokeyword.fragmentation.SwipeBackLayout;
 import me.yokeyword.fragmentation_swipeback.core.ISwipeBackFragment;

@@ -1,13 +1,13 @@
 package com.orhanobut.dialogplus;
 
 import android.content.Context;
-import android.support.annotation.AnimRes;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.AbsListView;
+import androidx.annotation.AnimRes;
 
 final class Utils {
 

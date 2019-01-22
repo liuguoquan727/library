@@ -6,10 +6,10 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.util.SimpleArrayMap;
+import androidx.collection.SimpleArrayMap;
+import androidx.core.app.ActivityCompat;
 
-import static android.support.v4.content.PermissionChecker.checkSelfPermission;
+import static androidx.core.content.PermissionChecker.checkSelfPermission;
 
 public final class PermissionUtils {
 
@@ -60,7 +60,8 @@ public final class PermissionUtils {
   private static boolean permissionExists(String permission) {
     // Check if the permission could potentially be missing on this device
     Integer minVersion = MIN_SDK_PERMISSIONS.get(permission);
-    // If null was returned from the above call, there is no need for a device API level check for the permission;
+    // If null was returned from the above call, there is no need for a device API level check
+    // for the permission;
     // otherwise, we check if its minimum API level requirement is met
     return minVersion == null || Build.VERSION.SDK_INT >= minVersion;
   }
@@ -84,8 +85,8 @@ public final class PermissionUtils {
   /**
    * Determine context has access to the given permission.
    *
-   * This is a workaround for RuntimeException of Parcel#readException.
-   * For more detail, check this issue https://github.com/hotchemi/PermissionsDispatcher/issues/107
+   * <p>This is a workaround for RuntimeException of Parcel#readException. For more detail, check
+   * this issue https://github.com/hotchemi/PermissionsDispatcher/issues/107
    *
    * @param context context
    * @param permission permission
@@ -107,8 +108,8 @@ public final class PermissionUtils {
    * @param permissions permission list
    * @return returns true if one of the permission is needed to show rationale.
    */
-  public static boolean shouldShowRequestPermissionRationale(Activity activity,
-      String... permissions) {
+  public static boolean shouldShowRequestPermissionRationale(
+      Activity activity, String... permissions) {
     for (String permission : permissions) {
       if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
         return true;
@@ -123,7 +124,8 @@ public final class PermissionUtils {
    * @param context context
    * @return target sdk version
    */
-  @TargetApi(Build.VERSION_CODES.DONUT) public static int getTargetSdkVersion(Context context) {
+  @TargetApi(Build.VERSION_CODES.DONUT)
+  public static int getTargetSdkVersion(Context context) {
     if (targetSdkVersion != -1) {
       return targetSdkVersion;
     }

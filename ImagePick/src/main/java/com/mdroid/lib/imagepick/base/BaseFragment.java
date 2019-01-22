@@ -2,9 +2,6 @@ package com.mdroid.lib.imagepick.base;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +9,9 @@ import android.view.ViewStub;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import com.mdroid.lib.imagepick.R;
 import com.mdroid.lib.imagepick.utils.SystemBarConfig;
 

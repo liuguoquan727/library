@@ -1,12 +1,12 @@
 package com.mdroid.lib.core.dialog;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.annotation.LayoutRes;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.mdroid.lib.core.R;
 import com.mdroid.utils.AndroidUtils;

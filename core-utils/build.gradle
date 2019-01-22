@@ -26,9 +26,8 @@ allprojects {
 
 dependencies {
   api fileTree(dir: 'libs', include: ['*.jar'])
-  api "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
-  implementation "com.android.support:support-annotations:${SUPPORT_VERSION}"
   api "de.greenrobot:java-common:${COMMON_VERSION}"
+  api "androidx.core:core:1.0.1"
 }
 
 task sourcesJar(type: Jar) {

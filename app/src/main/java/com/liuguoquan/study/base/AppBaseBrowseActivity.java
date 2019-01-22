@@ -1,10 +1,10 @@
 package com.liuguoquan.study.base;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
 import com.liuguoquan.study.R;
 import com.mdroid.lib.core.base.BaseActivity;
 import com.mdroid.lib.core.base.BaseExtraKeys;

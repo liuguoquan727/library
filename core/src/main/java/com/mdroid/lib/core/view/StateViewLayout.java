@@ -1,19 +1,16 @@
 package com.mdroid.lib.core.view;
 
 import android.content.Context;
-import android.support.annotation.AttrRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
+import androidx.annotation.AttrRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.base.Status;
 
-/**
- * Created by liuguoquan on 2017/7/26.
- */
-
+/** Created by liuguoquan on 2017/7/26. */
 public class StateViewLayout extends FrameLayout {
 
   protected View mLoadingView;
@@ -30,17 +27,17 @@ public class StateViewLayout extends FrameLayout {
     this(context, attrs, 0);
   }
 
-  public StateViewLayout(@NonNull Context context, @Nullable AttributeSet attrs,
-      @AttrRes int defStyleAttr) {
+  public StateViewLayout(
+      @NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     initView(context);
   }
 
   private void initView(Context context) {
-
   }
 
-  @Override protected void onFinishInflate() {
+  @Override
+  protected void onFinishInflate() {
     super.onFinishInflate();
     int childCount = getChildCount();
     if (childCount > 1) {

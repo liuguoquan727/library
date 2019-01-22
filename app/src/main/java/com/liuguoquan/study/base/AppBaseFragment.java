@@ -1,8 +1,10 @@
 package com.liuguoquan.study.base;
 
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.utils.ToolBarUtils;
 import com.mdroid.app.TranslucentStatusCompat;
@@ -15,12 +17,18 @@ import com.mdroid.lib.core.utils.UIUtil;
 public abstract class AppBaseFragment<V extends AppBaseView, T extends AppBaseFragmentPresenter<V>>
     extends BaseFragment<V, T> implements BaseView<T>, EventBusEvent.INotify {
 
+  private Unbinder unbinder;
+
   @Override
   protected void bind(View view) {
+    unbinder = ButterKnife.bind(this, view);
   }
 
   @Override
   protected void unbind() {
+    if (unbinder != null) {
+      unbinder.unbind();
+    }
   }
 
   @Override

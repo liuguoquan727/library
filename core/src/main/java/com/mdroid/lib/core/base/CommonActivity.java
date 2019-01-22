@@ -4,22 +4,18 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.CallSuper;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentHelper;
 import android.text.TextUtils;
 import android.view.View;
+import androidx.annotation.CallSuper;
+import androidx.fragment.app.Fragment;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
 import com.mdroid.lib.core.utils.Analysis;
 import com.mdroid.utils.AndroidUtils;
-import com.mdroid.utils.Ln;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * activity基类,如果此activity下的fragment需要使用startActivityForResult打开另一个activity，
- * 需要调用{@link #setFragmentRecord(Fragment)}以防止可能出现onActivityResult不回调的问题
  */
 public class CommonActivity extends LifeCycleActivity {
 
@@ -117,42 +113,4 @@ public class CommonActivity extends LifeCycleActivity {
     return (BaseFragment) Fragment.instantiate(this, mFragmentName, getIntent().getExtras());
   }
 
-  /**
-   * 解决fragment中嵌套fragment时，内层的fragment使用startActivityForResult收不到onActivityResult的问题
-   *
-   * @param fragment 使用startActivityForResult的fragment
-   */
-  public void setFragmentRecord(Fragment fragment) {
-    Fragment node = fragment;
-    while (node != null) {
-      int index = FragmentHelper.getIndex(node);
-      if (index < 0) {
-        throw new IllegalStateException("Fragment is out of FragmentManager: " + node);
-      }
-      mFragmentRecord.add(0, index);
-      node = node.getParentFragment();
-    }
-  }
-
-  @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    FragmentHelper.noteStateNotSaved(this);
-    List<Fragment> active = FragmentHelper.getActive(this);
-    Fragment fragment = null;
-    for (Integer index : mFragmentRecord) {
-      if (active != null && index >= 0 && index < active.size()) {
-        fragment = active.get(index);
-        if (fragment == null) {
-          Ln.w("Activity result no fragment exists for index: 0x" + Integer.toHexString(index));
-        } else {
-          active = FragmentHelper.getChildActive(fragment);
-        }
-      }
-    }
-    mFragmentRecord.clear();
-    if (fragment == null) {
-      super.onActivityResult(requestCode, resultCode, data);
-    } else {
-      fragment.onActivityResult(requestCode, resultCode, data);
-    }
-  }
 }

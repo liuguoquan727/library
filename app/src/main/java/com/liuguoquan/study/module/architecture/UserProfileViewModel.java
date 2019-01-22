@@ -1,6 +1,6 @@
 package com.liuguoquan.study.module.architecture;
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel;
 
 /**
  * Description:

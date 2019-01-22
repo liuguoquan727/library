@@ -29,12 +29,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.DrawableRes;
-import android.support.v4.view.AccessibilityDelegateCompat;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -43,6 +37,12 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
+import androidx.annotation.DrawableRes;
+import androidx.core.view.AccessibilityDelegateCompat;
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.customview.widget.ViewDragHelper;
 import com.nineoldandroids.view.ViewHelper;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -75,7 +75,7 @@ import java.util.ArrayList;
  * displaying the contents of the selected thread. Inappropriate uses of SlidingPaneLayout include
  * switching between disparate functions of your app, such as jumping from a social stream view
  * to a view of your personal profile - cases such as this should use the navigation drawer
- * pattern instead. ({@link android.support.v4.widget.DrawerLayout DrawerLayout} implements this
+ * pattern instead. ({@link androidx.core.widget.DrawerLayout DrawerLayout} implements this
  * pattern.)</p>
  * <p>
  * <p>Like {@link android.widget.LinearLayout LinearLayout}, SlidingPaneLayout supports
