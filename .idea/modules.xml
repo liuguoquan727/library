@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/core-library/core-library.iml" filepath="$PROJECT_DIR$/core-library/core-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/core-utils/core-utils.iml" filepath="$PROJECT_DIR$/core-utils/core-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/dialogplus/dialogplus.iml" filepath="$PROJECT_DIR$/dialogplus/dialogplus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../AndroidStudioProjects/fluttertest/my_flutter/.android/Flutter/flutter.iml" filepath="$PROJECT_DIR$/../../AndroidStudioProjects/fluttertest/my_flutter/.android/Flutter/flutter.iml" />
+      <module fileurl="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/fluttertoast-3.0.1/android/fluttertoast.iml" filepath="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/fluttertoast-3.0.1/android/fluttertoast.iml" />
     </modules>
   </component>
 </project>

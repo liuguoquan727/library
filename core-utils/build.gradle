@@ -26,7 +26,6 @@ allprojects {
 
 dependencies {
   api fileTree(dir: 'libs', include: ['*.jar'])
-  api "de.greenrobot:java-common:${COMMON_VERSION}"
   api "androidx.core:core:1.0.1"
 }
 

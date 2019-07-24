@@ -29,7 +29,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
-import de.greenrobot.common.io.FileUtils;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -41,6 +41,7 @@ import java.util.Enumeration;
 import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
+
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
@@ -543,34 +544,6 @@ public class AndroidUtils {
     } finally {
       if (zip != null) {
         zip.close();
-      }
-    }
-  }
-
-  public static void copyDirectory(File srcDir, File destDir) throws IOException {
-    if (destDir.exists()) {
-      if (!destDir.isDirectory()) {
-        throw new IOException("Destination '" + destDir + "' exists but is not a directory");
-      }
-    } else {
-      if (!destDir.mkdirs()) {
-        throw new IOException("Destination '" + destDir + "' directory cannot be created");
-      }
-    }
-    if (!destDir.canWrite()) {
-      throw new IOException("Destination '" + destDir + "' cannot be written to");
-    }
-    // recurse
-    File[] files = srcDir.listFiles();
-    if (files == null) {  // null if security restricted
-      throw new IOException("Failed to list contents of " + srcDir);
-    }
-    for (int i = 0; i < files.length; i++) {
-      File copiedFile = new File(destDir, files[i].getName());
-      if (files[i].isDirectory()) {
-        copyDirectory(files[i], copiedFile);
-      } else {
-        FileUtils.copyFile(files[i], copiedFile);
       }
     }
   }

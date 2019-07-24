@@ -15,7 +15,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.media.ExifInterface;
 import android.net.Uri;
-import de.greenrobot.common.io.IoUtils;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -163,7 +163,13 @@ public class BitmapUtils {
       is = contentResolver.openInputStream(data);
       BitmapFactory.decodeStream(is, null, options);
     } finally {
-      IoUtils.safeClose(is);
+        if (is != null) {
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     calculateInSampleSize(width, height, options);
@@ -171,7 +177,13 @@ public class BitmapUtils {
       is = contentResolver.openInputStream(data);
       return BitmapFactory.decodeStream(is, null, options);
     } finally {
-      IoUtils.safeClose(is);
+        if (is != null) {
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
   }
 
@@ -225,7 +237,13 @@ public class BitmapUtils {
     } catch (Throwable e) {
       return false;
     } finally {
-      IoUtils.safeClose(fos);
+        if (fos != null) {
+            try {
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
   }
 

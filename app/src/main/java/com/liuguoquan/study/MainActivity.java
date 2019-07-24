@@ -3,16 +3,18 @@ package com.liuguoquan.study;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import androidx.appcompat.widget.Toolbar;
-import butterknife.OnClick;
+
 import com.jaeger.library.StatusBarUtil;
 import com.liuguoquan.study.base.AppBaseActivity;
 import com.liuguoquan.study.module.databind.DataBindingUI;
 import com.liuguoquan.study.module.faceplusplus.OcrUI;
-import com.liuguoquan.study.module.room.RoomUI;
+import com.liuguoquan.study.module.flutter.FlutterActivity;
 import com.mdroid.lib.core.base.BasePresenter;
 import com.mdroid.lib.core.base.Status;
 import com.mdroid.lib.core.utils.ActivityUtil;
+
+import androidx.appcompat.widget.Toolbar;
+import butterknife.OnClick;
 
 public class MainActivity extends AppBaseActivity {
 
@@ -49,10 +51,11 @@ public class MainActivity extends AppBaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.room:
-                ActivityUtil.startActivity(this, RoomUI.class);
+                Intent intent = new Intent(MainActivity.this, FlutterActivity.class);
+                startActivity(intent);
                 break;
             case R.id.data_binding:
-                Intent intent = new Intent(this, DataBindingUI.class);
+                intent = new Intent(this, DataBindingUI.class);
                 ActivityUtil.startActivity(this, intent);
                 break;
             case R.id.image_ocr:

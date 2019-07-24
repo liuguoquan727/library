@@ -11,20 +11,23 @@ import android.view.ViewStub;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import androidx.annotation.CallSuper;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
+
 import com.mdroid.PausedHandler;
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
 import com.mdroid.lib.core.utils.SystemBarConfig;
 import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.lifecycle.LifecycleDispatcher;
-import com.trello.navi2.component.support.NaviFragment;
-import com.trello.rxlifecycle2.LifecycleProvider;
-import com.trello.rxlifecycle2.android.FragmentEvent;
-import com.trello.rxlifecycle2.navi.NaviLifecycle;
+import com.trello.lifecycle2.android.lifecycle.AndroidLifecycle;
+import com.trello.rxlifecycle3.LifecycleProvider;
+
 import java.lang.ref.WeakReference;
+
+import androidx.annotation.CallSuper;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
 
 /**
  * fragment的基类，定义了一些通用操作
@@ -36,10 +39,10 @@ import java.lang.ref.WeakReference;
  * @param <V> 对应View，即此fragment
  * @param <T> 对应Presenter
  */
-public abstract class BaseFragment<V, T extends BasePresenter<V>> extends NaviFragment {
+public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragment {
 
-  protected final LifecycleProvider<FragmentEvent> mLifecycleProvider =
-      NaviLifecycle.createFragmentLifecycleProvider(this);
+    protected final LifecycleProvider<Lifecycle.Event> mLifecycleProvider =
+        AndroidLifecycle.createLifecycleProvider(this);
   /** 对应MVP中的P,必须在{@link #initView(View)}或之后才能使用 */
   protected T mPresenter;
   protected LayoutInflater mInflater;

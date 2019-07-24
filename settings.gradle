@@ -1,3 +1,8 @@
 include ':app', ':BaseRecyclerAdapter', ':core', ':core-base', ':dialogplus', ':core-library',
-    ':core-utils',
-    ':ImagePick'
+        ':core-utils',
+        ':ImagePick'
+
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File('/Users/liuguoquan/workspace/AndroidStudioProjects/fluttertest/my_flutter/.android/include_flutter.groovy'
+))

@@ -2,14 +2,16 @@ package com.mdroid.lib.core.base;
 
 import android.os.Bundle;
 import android.os.Message;
+
 import com.mdroid.PausedHandler;
 import com.mdroid.lifecycle.LifecycleDispatcher;
+
 import java.lang.ref.WeakReference;
 
-/**
- * Description：用于自己管理activity的生命周期的activity基类
- */
-public class LifeCycleActivity extends NaviAppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+/** Description：用于自己管理activity的生命周期的activity基类 */
+public class LifeCycleActivity extends AppCompatActivity {
 
   private PausedHandler mHandler;
 

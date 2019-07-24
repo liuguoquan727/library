@@ -27,12 +27,13 @@
     <activity
         android:name=".module.databind.DataBindingUI"
         android:screenOrientation="portrait"
-        android:theme="@style/AppTheme.NoActionBar.SwipeBack">
-    </activity>
+        android:theme="@style/AppTheme.NoActionBar.SwipeBack"></activity>
     <activity
         android:name=".module.faceplusplus.OcrUI"
-        android:screenOrientation="portrait">
-    </activity>
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name=".module.flutter.FlutterActivity"
+        android:screenOrientation="portrait"/>
   </application>
 
 </manifest>

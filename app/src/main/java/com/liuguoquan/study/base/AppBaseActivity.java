@@ -2,15 +2,17 @@ package com.liuguoquan.study.base;
 
 import android.view.View;
 import android.widget.TextView;
-import androidx.appcompat.widget.Toolbar;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+
 import com.liuguoquan.study.R;
 import com.liuguoquan.study.utils.ToolBarUtils;
 import com.mdroid.lib.core.base.BaseActivity;
 import com.mdroid.lib.core.base.BaseView;
 import com.mdroid.lib.core.eventbus.EventBusEvent;
 import com.mdroid.lib.core.utils.UIUtil;
+
+import androidx.appcompat.widget.Toolbar;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /** Description： */
 public abstract class AppBaseActivity<V extends AppBaseView, T extends AppBaseActivityPresenter<V>>

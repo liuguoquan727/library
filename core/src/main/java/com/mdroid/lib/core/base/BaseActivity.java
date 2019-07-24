@@ -2,22 +2,24 @@ package com.mdroid.lib.core.base;
 
 import android.os.Bundle;
 import android.view.View;
-import androidx.annotation.CallSuper;
+
 import com.mdroid.lib.core.R;
 import com.mdroid.lib.core.eventbus.EventBus;
 import com.mdroid.lib.core.utils.Toost;
 import com.mdroid.utils.AndroidUtils;
-import com.trello.rxlifecycle2.LifecycleProvider;
-import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.trello.rxlifecycle2.navi.NaviLifecycle;
+import com.trello.lifecycle2.android.lifecycle.AndroidLifecycle;
+import com.trello.rxlifecycle3.LifecycleProvider;
+
+import androidx.annotation.CallSuper;
+import androidx.lifecycle.Lifecycle;
 
 /**
  * Activity基类
  */
 public abstract class BaseActivity<V, T extends BasePresenter<V>> extends LifeCycleActivity {
 
-  protected final LifecycleProvider<ActivityEvent> mLifecycleProvider =
-      NaviLifecycle.createActivityLifecycleProvider(this);
+    protected final LifecycleProvider<Lifecycle.Event> mLifecycleProvider =
+        AndroidLifecycle.createLifecycleProvider(this);
 
   public T mPresenter;
 
